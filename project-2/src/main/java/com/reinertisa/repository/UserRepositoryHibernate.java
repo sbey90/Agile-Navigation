@@ -2,6 +2,8 @@ package com.reinertisa.repository;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -35,10 +37,10 @@ public class UserRepositoryHibernate implements UserRepository{
 		return sessionFactory.getCurrentSession().createCriteria(User.class).list();
 	}
 
-	public User findByName(String name) {
+	public User findByUsername(String username) {
 		try {
 			return (User) sessionFactory.getCurrentSession().createCriteria(User.class)
-					.add(Restrictions.like("name", name)) // this should be the PROPERTY name of the class
+					.add(Restrictions.like("username", username)) // this should be the PROPERTY name of the class
 					.list()
 					.get(0);
 		} catch (IndexOutOfBoundsException e) { 
@@ -52,6 +54,28 @@ public class UserRepositoryHibernate implements UserRepository{
 		sessionFactory.getCurrentSession().save(role);
 		
 	}
+
+	@Override
+	public User findUserByUsernameAndPassword(String username, String password) {
+		
+		try {
+			
+			String sql = "from User WHERE username= : username AND password= : password";
+			
+			TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(sql, User.class);
+			query.setParameter("username", username);
+			query.setParameter("password", password);
+			
+			return query.getSingleResult();
+			
+		} catch (Exception e) {
+			logger.debug(e);
+			return null;
+		}
+	}
+	
+	
+	
 	
 	
 }

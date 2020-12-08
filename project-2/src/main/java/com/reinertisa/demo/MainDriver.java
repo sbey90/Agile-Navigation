@@ -32,17 +32,17 @@ public class MainDriver {
 //		setDatabase(userService, taskService);
 
 		
-//		userService.registerUser(new User("isax", "111", "Isa", "Reinert", "reinert.isa@gmail.com",LocalDateTime.now(), 
+//		userService.signup(new User("isax", "111", "Isa", "Reinert", "reinert.isa@gmail.com",LocalDateTime.now(), 
 //								 new UserRole(1, "Analyst")));
-//		userService.registerUser(new User("alejandro", "333", "Alejandro", "Garza", "alejandro.garza@revature.net",LocalDateTime.now(), 
+//		userService.signup(new User("alejandro", "333", "Alejandro", "Garza", "alejandro.garza@revature.net",LocalDateTime.now(), 
 //				 				 new UserRole(2, "Software Developer")));
-//		userService.registerUser(new User("jeremy", "444", "Jeremy", "Critchley", "jeremycritchley@gmail.com",LocalDateTime.now(), 
+//		userService.signup(new User("jeremy", "444", "Jeremy", "Critchley", "jeremycritchley@gmail.com",LocalDateTime.now(), 
 //								 new UserRole(3, "Software Developer")));
-//		userService.registerUser(new User("connor", "555", "Connor", "Ryan", "connor.ryan@revature.net",LocalDateTime.now(), 
+//		userService.signup(new User("connor", "555", "Connor", "Ryan", "connor.ryan@revature.net",LocalDateTime.now(), 
 //				                 new UserRole(3, "Software Architecture")));
-//		userService.registerUser(new User("saleel", "222", "Saleel", "Bey", "beysaleel7@gmail.com",LocalDateTime.now(), 
+//		userService.signup(new User("saleel", "222", "Saleel", "Bey", "beysaleel7@gmail.com",LocalDateTime.now(), 
 //								 new UserRole(4, "Software Manager")));
-		
+//		
 		System.out.println("Users created Successfully");
 		
 		

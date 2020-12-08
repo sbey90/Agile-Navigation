@@ -1,0 +1,71 @@
+<section class="Form my-4 mx-5">
+
+    <div class="container">
+
+        <div class="row no-gutters">
+
+            <div class="col-lg-5">
+                <img [src]=myImage class="img-fluid"alt="">
+            </div>
+
+            <div class="col-lg-7 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">ERS</h1>
+                <h4>Create an account</h4>
+                
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" placeholder = "Username" class="form-control my-2 p-4" 
+                            [(ngModel)]="user.username" id="username" name="username" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="password" placeholder = "Password" class="form-control my-2 p-4" 
+                            [(ngModel)]="user.password" id="password" name="password" required>
+                        </div>         
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="password" placeholder = "Confirm Password" class="form-control my-2 p-4" 
+                            [(ngModel)]="user.confirmPassword" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" placeholder = "First Name" class="form-control my-2 p-4" 
+                            [(ngModel)]="user.firstName" id="firstName" name="firstName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" placeholder = "Last Name" class="form-control my-2 p-4" 
+                            [(ngModel)]="user.lastName" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" placeholder = "Email" class="form-control my-2 p-4" 
+                            [(ngModel)]="user.email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn1 mt-3 mb-5" value="signin">Sign up</button>
+                        </div>
+                    </div>
+
+                    <a routerLink="api/users">Show Users</a>
+                    <a href="">Sign in</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>

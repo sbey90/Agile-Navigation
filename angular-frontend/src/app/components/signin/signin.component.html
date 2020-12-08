@@ -1,0 +1,50 @@
+<section class="Form my-4 mx-5">
+
+    <div class="container">
+
+        <div class="row no-gutters">
+
+            <div class="col-lg-5">
+                <img [src]=myImage class="img-fluid"alt="">
+            </div>
+
+            <div class="col-lg-7 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">ERS</h1>
+                <h4>Sign into your account</h4>
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" placeholder = "Username" class="form-control my-3 p-4" 
+                            [(ngModel)]="username" id="username" name="username">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="password" placeholder = "Password" class="form-control my-3 p-4" 
+                            [(ngModel)]="password" id="password" name="password">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn1 mt-3 mb-5" value="signin">Sign in</button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7" id="warningText">
+
+                        </div>
+
+                    </div>
+
+                    <a href="./resources/html/forgotPass.html">Forgot password</a>
+                    <p>Don't have an account? <a routerLink="../signup">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>

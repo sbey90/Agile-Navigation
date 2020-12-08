@@ -10,5 +10,6 @@ public interface UserRepository {
 	void save (User user);
 	void save(UserRole role);
 	List<User> findAll();
-	User findByName(String username);
+	User findByUsername(String username);
+	User findUserByUsernameAndPassword(String username, String password);
 }

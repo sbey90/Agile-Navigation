@@ -19,6 +19,12 @@ public class UserRole {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+	public UserRole(int roleId) {
+		this.roleId = roleId;
+	}
+
+
 	public UserRole(String role) {
 
 		this.role = role;
