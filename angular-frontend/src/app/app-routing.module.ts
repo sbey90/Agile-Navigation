@@ -12,10 +12,7 @@ const routes: Routes = [
   {path: 'api/signup', component: SignupComponent},
   {path: 'api/mngHome', component: HomeComponent},
   {path: 'api/users', component: ShowUsersComponent},
-
-
-  {path: 'api/users', component: ShowUsersComponent},
-
+  {path: 'api/users', component: ShowUsersComponent}
 
 ];
 
