@@ -1,7 +1,5 @@
 package com.reinertisa.service;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import com.reinertisa.model.User;
@@ -16,8 +14,8 @@ public interface UserService {
 	
 	
 	public String signin(HttpServletRequest req);
-	public String signout(HttpServletRequest req);
-	public String forgotPassword(HttpServletRequest req);
+	public String signout(HttpServletRequest req);	
+	public String forgotPass(HttpServletRequest req);
 	
 	
 	public boolean createRoleTable(UserRole role);

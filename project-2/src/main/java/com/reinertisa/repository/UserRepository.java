@@ -12,4 +12,8 @@ public interface UserRepository {
 	List<User> findAll();
 	User findByUsername(String username);
 	User findUserByUsernameAndPassword(String username, String password);
+	User findUserByEmail(String email);
+	
+	public boolean isAvailableEmail(String email);
+	public boolean isAvailableUsername(String username); 
 }

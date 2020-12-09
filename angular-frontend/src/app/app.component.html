@@ -1,6 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf = "authorizationService.isAuthenticated">
+
+<div *ngIf="authenticationService.isAuthenticated">
+<div *ngIf="authenticationService.userRole === 'Software Manager'; then thenBlock; else elseBlock"></div>
+
+<ng-template #thenBlock>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="authenticationService.isAuthenticated">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Task Manager</a>
+      <a class="navbar-brand" routerLink="api/mngHome">Task Manager</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -9,16 +15,16 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" routerLink="api/mngHome">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Create Task</a>
+            <a class="nav-link" routerLink="api/createTask">Create Task</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Assign Task</a>
+            <a class="nav-link" routerLink="api/assignTask">Assign Task</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">DashBoard</a>
+            <a class="nav-link" routerLink="api/dashboard">DashBoard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="api/users">Employees</a>
@@ -28,15 +34,15 @@
               Settings
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">FeedBack</a></li>
+              <li><a class="dropdown-item" routerLink="api/profile">Profile</a></li>
+              <li><a class="dropdown-item" routerLink="api/feedback">FeedBack</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Performance</a></li>
+              <li><a class="dropdown-item" routerLink="api/performance">Performance</a></li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign out</a>
+            <a class="nav-link" (click)="signOut()">Sign out</a>
           </li>
 
         </ul>
@@ -46,4 +52,106 @@
     </div>
   </nav>
 
- <router-outlet></router-outlet>
+ </ng-template>
+
+<ng-template #elseBlock>
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="authenticationService.isAuthenticated">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="api/empHome">Task Manager</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="api/empHome">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="api/showTask">Tasks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="api/dashboard">DashBoard</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Settings
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="api/profile">Profile</a></li>
+              <li><a class="dropdown-item" routerLink="api/feedback">FeedBack</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="api/performance">Performance</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="signOut()">Sign out</a>
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </div>
+  </nav>
+
+</ng-template>
+
+
+</div>
+
+<router-outlet></router-outlet>
+
+<!-- WORKING CODE V1 -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="authenticationService.isAuthenticated">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="api/mngHome">Task Manager</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="api/mngHome">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="api/createTask">Create Task</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="api/assignTask">Assign Task</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="api/dashboard">DashBoard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="api/users">Employees</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Settings
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="api/profile">Profile</a></li>
+              <li><a class="dropdown-item" routerLink="api/feedback">FeedBack</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="api/performance">Performance</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="signOut()">Sign out</a>
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </div>
+  </nav>
+
+<router-outlet></router-outlet> -->

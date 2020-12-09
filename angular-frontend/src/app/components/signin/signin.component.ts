@@ -1,6 +1,8 @@
-import { AuthorizationService } from './../../services/authorization.service';
+import { SignInData } from './../../models/signindata';
+import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -10,23 +12,38 @@ import { Router } from '@angular/router';
 export class SigninComponent implements OnInit {
 
   myImage: string = "assets/img/index1.jpg";
-  username: string = "";
-  password: string = "";
-  message: any;
 
-  constructor(private service: AuthorizationService, private router: Router) { }
+  isFormInvalid = false;
+  areCredentialsInvalid = false;
+
+  constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    console.log(this.username + " " + this.password);
-    this.signin();
+  onSubmit(signInForm: NgForm) {
+
+    if (!signInForm.valid) {
+      this.isFormInvalid = true;
+      this.areCredentialsInvalid = false;
+      return;
+    }
+
+    console.log(signInForm.value)
+    const signInData = new SignInData(signInForm.value.username, signInForm.value.password);
+
+    this.authenticationService.authenticate(signInData)
+      .subscribe(data => {
+        console.log(data);
+
+        if (data.status == "signin failed") {
+          this.isFormInvalid = false;
+          this.areCredentialsInvalid = true;
+        }
+
+      });
+
   }
 
-  signin(){
-    let data = this.service.signin(this.username, this.password);
-    console.log(data);
-  }
 
 }

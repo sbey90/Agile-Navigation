@@ -9,20 +9,20 @@
             </div>
 
             <div class="col-lg-7 px-5 pt-5">
-                <h1 class="font-weight-bold py-3">ERS</h1>
+                <h1 class="font-weight-bold py-3">Task Manager</h1>
                 <h4>Sign into your account</h4>
-                <form (ngSubmit)="onSubmit()">
+                <form (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
                     <div class="form-row">
                         <div class="col-lg-7">
                             <input type="text" placeholder = "Username" class="form-control my-3 p-4" 
-                            [(ngModel)]="username" id="username" name="username">
+                            id="username" name="username" required autofocus ngModel>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
                             <input type="password" placeholder = "Password" class="form-control my-3 p-4" 
-                            [(ngModel)]="password" id="password" name="password">
+                            id="password" name="password" required ngModel>
                         </div>
                     </div>
 
@@ -33,13 +33,21 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="col-lg-7" id="warningText">
-
+                        <div class="col-lg-7 mt-1 mb-3">
+                            <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">
+                                <h3>Please fill all fields</h3>
+                            </div>
+        
+                            
+                            <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+                                <h3>Invalid username or password</h3>
+                            </div>        
                         </div>
 
                     </div>
 
-                    <a href="./resources/html/forgotPass.html">Forgot password</a>
+
+                    <a routerLink="../forgotPass">Forgot password</a>
                     <p>Don't have an account? <a routerLink="../signup">Sign up</a></p>
                 </form>
             </div>
