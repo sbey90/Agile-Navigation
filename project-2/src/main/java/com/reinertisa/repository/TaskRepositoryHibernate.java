@@ -1,5 +1,7 @@
 package com.reinertisa.repository;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +28,8 @@ public class TaskRepositoryHibernate implements TaskRepository{
 	}
 	
 	@Override
-	public void save(Task task) {
-		sessionFactory.getCurrentSession().save(task);		
+	public int save(Task task) {
+		return (int) sessionFactory.getCurrentSession().save(task);		
 	}
 
 	@Override
@@ -43,6 +45,12 @@ public class TaskRepositoryHibernate implements TaskRepository{
 	@Override
 	public void save(TaskCategory category) {
 		sessionFactory.getCurrentSession().save(category);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Task> findAll() {
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createCriteria(Task.class).list();
 	}
 
 }
