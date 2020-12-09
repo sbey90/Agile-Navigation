@@ -33,7 +33,6 @@ export class UserService {
       
   }
 
-
   addUser(user: User): Observable<any> {
     console.log(user);
     return this.http.post<any>(`${BASE_URL}signup`, user, this.httpOptions)
@@ -41,6 +40,15 @@ export class UserService {
         tap((newUser: User) => console.log(newUser)),
         catchError(this.handleError<any>('addUser'))
       )
+  }
+
+  forgotPass(emailData : any): Observable<any> {
+
+    return this.http.post<any>(`${BASE_URL}forgotPass`, emailData, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<any>('forgotPass'))
+      );
+      
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

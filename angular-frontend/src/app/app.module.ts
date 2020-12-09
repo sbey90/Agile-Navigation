@@ -13,6 +13,12 @@ import { ShowUsersComponent } from './components/manager/show-users/show-users.c
 import { ShowProfileComponent } from './components/manager/show-profile/show-profile.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { EmpHomeComponent } from './components/employee/emp-home/emp-home.component';
+import { EmpShowProfileComponent } from './components/employee/emp-show-profile/emp-show-profile.component';
+import { EmpShowTasksComponent } from './components/employee/emp-show-tasks/emp-show-tasks.component';
+import { EmpDashboardComponent } from './components/employee/emp-dashboard/emp-dashboard.component';
+import { DashboardComponent } from './components/manager/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,13 @@ import { HttpClientModule } from '@angular/common/http';
     ShowTasksComponent,
     AssignTaskComponent,
     ShowUsersComponent,
-    ShowProfileComponent
+    ShowProfileComponent,
+    ForgotpasswordComponent,
+    EmpHomeComponent,
+    EmpShowProfileComponent,
+    EmpShowTasksComponent,
+    EmpDashboardComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

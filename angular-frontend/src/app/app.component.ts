@@ -1,5 +1,6 @@
-import { AuthorizationService } from './services/authorization.service';
+
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ export class AppComponent {
  
   title = 'angular-frontend';
 
-  constructor(public authorizationService: AuthorizationService){
+  constructor(public authenticationService: AuthenticationService){}
 
+  signOut(){
+    this.authenticationService.signOut();
   }
 }

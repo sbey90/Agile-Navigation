@@ -7,7 +7,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +21,7 @@ import com.google.gson.JsonParser;
 import com.reinertisa.model.User;
 import com.reinertisa.model.UserRole;
 import com.reinertisa.repository.UserRepository;
+import com.reinertisa.util.SendEmail;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -38,13 +38,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public String signup(HttpServletRequest req) {
 
-		System.out.println("Hello1");
+		
 		Gson gson = new Gson();
 		gson = new GsonBuilder().create();
 		JsonObject params = new JsonObject();
 		try {
 
-			System.out.println("Hello2");
 			JsonParser jsonParser = new JsonParser();
 			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
 			JsonObject rootobj = root.getAsJsonObject();
@@ -56,16 +55,25 @@ public class UserServiceImpl implements UserService {
 			String email = rootobj.get("email").getAsString();
 			LocalDateTime hireDate = LocalDateTime.now();
 			String role = rootobj.get("role").getAsString();
+			
+			
+			if(!userRepository.isAvailableUsername(username)) {
+				params.addProperty("status", "username not available");
+				String json = gson.toJson(params);
+				return json;
+			}
+			
+			if(!userRepository.isAvailableEmail(email)) {
+				params.addProperty("status", "email not available");
+				String json = gson.toJson(params);
+				return json;
+			}		
 
-			System.out.println("Hello3");
+	
 			User newUser = new User(username, password, firstName, lastName, email, hireDate, new UserRole(1, role));
-
-			System.out.println("New User: " + newUser);
 			
 			userRepository.save(newUser);
 			User user = getUserByUsername(username);
-
-			System.out.println("User: " + user);
 			
 			params.addProperty("userId", user.getUserId());
 			params.addProperty("username", user.getUsername());
@@ -78,12 +86,13 @@ public class UserServiceImpl implements UserService {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 			String hireDateFormatted = user.getHireDate().format(formatter);
 			params.addProperty("hireDate", hireDateFormatted);
+			params.addProperty("status", "account created");
 
 			String json = gson.toJson(params);
 			return json;
 
 		} catch (Exception e) {
-			params.addProperty("status", "process failed");
+			params.addProperty("status", "account not created");
 			String json = gson.toJson(params);
 			return json;
 		}
@@ -156,7 +165,7 @@ public class UserServiceImpl implements UserService {
 		gson = new GsonBuilder().create();
 		JsonObject params = new JsonObject();
 		String json = "";
-
+		
 		try {
 
 			JsonParser jsonParser = new JsonParser();
@@ -170,18 +179,22 @@ public class UserServiceImpl implements UserService {
 
 			if (user != null) {
 
-//				HttpSession session = req.getSession();
-//				session.setAttribute("userId", user.getUserId());			
-				json = gson.toJson(user);			
+				params.addProperty("userId", user.getUserId());
+				params.addProperty("username", user.getUsername());
+				params.addProperty("firstName", user.getFirstName());
+				params.addProperty("lastName", user.getLastName());
+				params.addProperty("role", user.getRole().getRole());
+				params.addProperty("status", "signin success");
+		
+				json = gson.toJson(params);			
 
 			} else {
-				params.addProperty("status", "process failed");
+				params.addProperty("status", "signin failed");
 				json = gson.toJson(params);
-
 			}
 
 		} catch (Exception e) {
-			params.addProperty("status", "process failed");
+			params.addProperty("status", "signin failed");
 			json = gson.toJson(params);
 		}
 		
@@ -194,9 +207,49 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+
+	@SuppressWarnings("static-access")
 	@Override
-	public String forgotPassword(HttpServletRequest req) {
-		// TODO Auto-generated method stub
-		return null;
+	public String forgotPass(HttpServletRequest req) {
+
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json= "";
+
+		try {
+
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+
+			String toEmail = rootobj.get("email").getAsString();
+			
+			User user = userRepository.findUserByEmail(toEmail);
+			
+
+			if (user != null) {
+
+				SendEmail email = new SendEmail();
+				if(email.sendEmail(user)) {
+					params.addProperty("status", "email sent successfully");
+					json = gson.toJson(params);
+				} else {
+					params.addProperty("status", "email not sent");
+					json = gson.toJson(params);
+				}			
+
+			} else {
+				params.addProperty("status", "invalid email");
+				json = gson.toJson(params);
+			}			
+
+		} catch (Exception e) {
+			params.addProperty("status", "email not sent");
+			json = gson.toJson(params);
+		}
+		
+		return json;
 	}
+
 }

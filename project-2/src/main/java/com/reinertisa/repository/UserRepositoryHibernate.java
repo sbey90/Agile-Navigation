@@ -2,6 +2,7 @@ package com.reinertisa.repository;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import org.apache.log4j.Logger;
@@ -73,9 +74,77 @@ public class UserRepositoryHibernate implements UserRepository{
 			return null;
 		}
 	}
-	
-	
-	
+
+	@Override
+	public boolean isAvailableEmail(String email) {
+
+		try {
+			
+			String sql = "from User WHERE email= : email";
+			
+			TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(sql, User.class);
+			query.setParameter("email", email);
+			
+			try {
+				query.getSingleResult();	
+				return false;
+			} catch (NoResultException e) {
+				return true;
+			}
+			
+			
+		} catch (Exception e) {
+			logger.debug(e);
+		}
+		
+		return true;		
+	}
+
+	@Override
+	public boolean isAvailableUsername(String username) {
+		try {
+			
+			String sql = "from User WHERE username= :username";
+			
+			TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(sql, User.class);
+			query.setParameter("username", username);
+			
+			try {
+				query.getSingleResult();	
+				return false;
+			} catch (NoResultException e) {
+				return true;
+			}			
+			
+		} catch (Exception e) {
+			logger.debug(e);
+		}
+		
+		return true;	
+	}
+
+	@Override
+	public User findUserByEmail(String email) {
+		
+		try {			
+			
+			String sql = "from User WHERE email= :email";
+			
+			TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(sql, User.class);
+			query.setParameter("email", email);
+			
+			try {
+				User user = query.getSingleResult();	
+				return user;
+			} catch (NoResultException e) {
+				return null;
+			}
+			
+		} catch (Exception e) {
+			logger.debug(e);
+		}			
+		return null;
+	}	
 	
 	
 }

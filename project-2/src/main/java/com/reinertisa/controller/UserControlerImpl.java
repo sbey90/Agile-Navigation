@@ -28,39 +28,37 @@ import com.reinertisa.service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @Controller("userController")
-public class UserControlerImpl implements UserController{
-	
+public class UserControlerImpl implements UserController {
+
 	@Autowired
 	private UserService userService;
-	
+
 	@PostMapping("api/signup")
 	public @ResponseBody String signup(HttpServletRequest req) {
-					
-			return userService.signup(req);
-		
+
+		return userService.signup(req);
 	}
-	
+
 	@PostMapping("api/signin")
-	public @ResponseBody String signin(HttpServletRequest req) {					
-			return userService.signin(req);
+	public @ResponseBody String signin(HttpServletRequest req) {
 		
+		return userService.signin(req);
 	}
-	
+
 	@GetMapping("api/signout")
 	public String signout(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@PostMapping("api/forgotPassword")
-	public String forgotPassword(HttpServletRequest req) {
-		// TODO Auto-generated method stub
-		return null;
+	@PostMapping("api/forgotPass")
+	public @ResponseBody String forgotPassword(HttpServletRequest req) {
+		return userService.forgotPass(req);
 	}
 
 	@PostMapping("api/getUser")
 	public @ResponseBody User getUser(User user, HttpServletRequest req) {
-		
+
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -69,7 +67,5 @@ public class UserControlerImpl implements UserController{
 	public @ResponseBody String getAllUsers() {
 		return userService.getAllUsers();
 	}
-
-
 
 }
