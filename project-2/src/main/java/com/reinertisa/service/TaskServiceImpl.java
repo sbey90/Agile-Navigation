@@ -174,7 +174,10 @@ public class TaskServiceImpl implements TaskService{
 			}
 			
 		} catch (Exception e) {
-			
+			logger.debug(e);
+			params = new JsonObject();
+			params.addProperty("status", "Failed to get All tasks");
+			json = gson.toJson(params);
 		}
 		return json;
 	}
@@ -183,10 +186,104 @@ public class TaskServiceImpl implements TaskService{
 
 	@Override
 	public String getTask(HttpServletRequest req) {
-		// TODO Auto-generated method stub
+		
 		return null;
-	}	
+	}
 	
+	/**
+	 * Get Tasks by Employee they belong to
+	 */
+	@Override
+	public String getTaskByEmployee(HttpServletRequest req) {
+		
+		List<Task> tasks = null;
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json = null;
+		try {
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			int id = rootobj.get("userId").getAsInt();
+			//String username = rootobj.get("username").getAsString();
+			//User u = userService.getUserByUsername(username);
+			
+			tasks = taskRepository.findByEmployee(id);
+			
+			JsonArray jobj = new JsonArray();
+			if (tasks == null || tasks.size() == 0) {
+				params.addProperty("status", "no record");
+				json = gson.toJson(params);
+			} else {
+				
+				
+				for (Task t: tasks) {					
+					jobj.add(getParams(t));
+				}
+				json = jobj.toString();
+			}
+			
+		} catch (Exception e) {
+			logger.debug(e);
+			params = new JsonObject();
+			params.addProperty("status", "Failed to get Employee tasks");
+			json = gson.toJson(params);
+		}
+		
+		return json;
+	}
+
+	/**
+	 * Get tasks by Manager they belong to
+	 */
+	@Override
+	public String getTaskByManager(HttpServletRequest req) {
+		List<Task> tasks = null;
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json = null;
+		
+		try {
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			
+			int id = rootobj.get("userId").getAsInt();
+			
+			tasks = taskRepository.findByManager(id);
+			
+			JsonArray jobj = new JsonArray();
+			if (tasks == null || tasks.size() == 0) {
+				params.addProperty("status", "no record");
+				json = gson.toJson(params);
+			} else {
+				
+				for (Task t: tasks) {					
+					jobj.add(getParams(t));
+				}
+				json = jobj.toString();
+			}
+			
+			
+		} catch (Exception e) {
+			logger.debug(e);
+			params = new JsonObject();
+			params.addProperty("status", "Failed to get Manager tasks");
+			json = gson.toJson(params);
+		}
+		
+		return json;
+	}
+	
+	/**
+	 * Create a Task object based off of Json task representation fields 
+	 * 
+	 * @param rootobj - JsonObject consisting of params to make Task object of
+	 * @return - Task object representing params in JsonObject
+	 * @throws Exception - to be handled in caller's try catch
+	 */
 	private Task getTaskInstance(JsonObject rootobj) throws Exception {
 		
 
@@ -213,6 +310,12 @@ public class TaskServiceImpl implements TaskService{
 		return new Task(taskName, taskCategory, taskStatus, description, taskPriority, emp, null, man, submittedDate, LocalDateTime.parse(dueDate, formatter));
 	}
 	
+	/**
+	 * Build JsonObject params from Task object
+	 * 
+	 * @param t - task object to be parameterized
+	 * @return - JsonObject of fields for JSON representation of task
+	 */
 	private JsonObject getParams(Task t) {
 		JsonObject params = new JsonObject();
 		
@@ -246,6 +349,11 @@ public class TaskServiceImpl implements TaskService{
 		
 	}
 	
+	/**
+	 * Get Task Category object for JPA Persistence 
+	 * @param category - category name
+	 * @return - instance of TaskCategory where category = category name, OR null
+	 */
 	private TaskCategory getTaskCategory(String category) {
 		TaskCategory ret = null;
 		
@@ -266,6 +374,11 @@ public class TaskServiceImpl implements TaskService{
 		return ret;
 	}
 	
+	/**
+	 * Get TaskStatus object for JPA Persistence 
+	 * @param status - status name
+	 * @return - instance of TaskStatus where status = status name, OR null
+	 */
 	private TaskStatus getTaskStatus(String status) {
 		TaskStatus ret = null;
 		if (status.equals("Pending")) {
@@ -278,6 +391,11 @@ public class TaskServiceImpl implements TaskService{
 		return ret;
 	}
 	
+	/**
+	 * Get Task Priority object for JPA Persistence 
+	 * @param priority - priority name
+	 * @return - instance of TaskPriority where priority = priority name, OR null
+	 */
 	private TaskPriority getTaskPriority(String priority) {
 		TaskPriority ret = null;
 		
@@ -292,5 +410,7 @@ public class TaskServiceImpl implements TaskService{
 		}
 		return ret;
 	}
+
+	
 
 }

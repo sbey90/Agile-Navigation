@@ -32,7 +32,7 @@ public class TaskControllerImpl implements TaskController {
 	@PostMapping("api/tasks/assign")
 	public String assignTask(HttpServletRequest req) {
 		System.out.println("In assignTask");
-		return null;
+		return taskService.updateTask(req);
 	}
 
 	@GetMapping("api/tasks/all")
@@ -45,6 +45,19 @@ public class TaskControllerImpl implements TaskController {
 	public String getTask(HttpServletRequest req) {
 		System.out.println("In getTask");
 		return null;
+	}
+
+	@GetMapping("api/tasks/employee")
+	public String getTaskByEmployee(HttpServletRequest req) {
+		System.out.println("In get Task by Employee");
+		
+		return taskService.getTaskByEmployee(req);
+	}
+
+	@GetMapping("api/tasks/manager")
+	public String getTaskByManager(HttpServletRequest req) {
+		System.out.println("In getTask by Manager");
+		return taskService.getTaskByManager(req);
 	}
 
 }
