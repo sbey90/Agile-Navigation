@@ -2,6 +2,8 @@ package com.reinertisa.repository;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +54,53 @@ public class TaskRepositoryHibernate implements TaskRepository{
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession().createCriteria(Task.class).list();
 	}
+
+	@Override
+	public boolean update(Task task) {
+		boolean ret = false;
+		try {
+			sessionFactory.getCurrentSession().update(task);
+			ret = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return ret;
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Task> findByEmployee(int id) {
+
+		List<Task> tasks = null;
+		try {
+			String sql = "from Task where employee_id = : id";
+			TypedQuery<Task> query = sessionFactory.getCurrentSession().createQuery(sql, Task.class);
+			query.setParameter("id", id);
+			tasks = query.getResultList();
+		} catch (Exception e) {
+			logger.debug(e);
+		}
+		
+		return tasks;
+		
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Task> findByManager(int id) {
+		List<Task> tasks = null;
+		try {
+			String sql = "from Task where manager_id = : id";
+			TypedQuery<Task> query = sessionFactory.getCurrentSession().createQuery(sql, Task.class);
+			query.setParameter("id", id);
+			tasks = query.getResultList();
+		} catch (Exception e) {
+			logger.debug(e);
+		}
+		
+		return tasks;
+	}
+
 
 }

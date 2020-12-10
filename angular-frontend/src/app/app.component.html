@@ -1,9 +1,9 @@
 
 <div *ngIf="authenticationService.isAuthenticated">
 <div *ngIf="authenticationService.userRole === 'Software Manager'; then thenBlock; else elseBlock"></div>
-
 <ng-template #thenBlock>
-  
+
+  <!--navbar-expand-lg-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="authenticationService.isAuthenticated">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="api/mngHome">Task Manager</a>
@@ -18,10 +18,10 @@
             <a class="nav-link" aria-current="page" routerLink="api/mngHome">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="api/createTask">Create Task</a>
+            <a class="nav-link" routerLink="api/createTask">Create</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="api/assignTask">Assign Task</a>
+            <a class="nav-link" routerLink="api/assignTask">Assign</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="api/dashboard">DashBoard</a>

@@ -25,9 +25,9 @@
 		<property name="driverClassName"
 			value="org.postgresql.Driver" />
 		<property name="url"
-			value="jdbc:postgresql://datarevdatabase.ceqrfdqfbwyy.us-east-2.rds.amazonaws.com/project-2" />
+			value="jdbc:postgresql://database-1.cc24tsfb4ap7.us-east-2.rds.amazonaws.com:5432/postgres" />
 		<property name="username" value="postgres" />
-		<property name="password" value="Durdane01%" />
+		<property name="password" value="postgres" />
 	</bean>
 
 
