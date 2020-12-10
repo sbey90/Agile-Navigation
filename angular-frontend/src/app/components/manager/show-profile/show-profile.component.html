@@ -1,1 +1,55 @@
-<p>show-profile works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="table-responsive mt-5">
+                <h3 class="text-center mb-3"><strong>Current Account Information</strong></h3>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="bg-dark text-white">
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>User Id</td>
+                            <td>{{user.userId}}</td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>First Name</td>
+                            <td>{{user.firstName}}</td>                        
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>                       
+                            <td>{{user.lastName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Hire Date</td>
+                            <td>{{user.hireDate}}</td>
+                        </tr>
+                        <tr>
+                            <td>User Role</td>
+                            <td>{{user.role}}</td> 
+                        </tr>      
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button class="update" title="update user" 
+                                [class.selected]="user === selectedUser" (click)="onSelect(user)">Update</button>
+
+                            </td>
+                        </tr>    
+                    </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+</div>  
+
+<app-update-profile [user] = "selectedUser"></app-update-profile>

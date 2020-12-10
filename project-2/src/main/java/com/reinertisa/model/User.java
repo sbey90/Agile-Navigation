@@ -60,7 +60,17 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 	}
-
+	
+	
+	public User(int userId, String username, String password, String firstName, String lastName, String email) {
+		super();
+		this.userId = userId;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
 
 	public User(String username, String password, String firstName, String lastName, String email,
 			LocalDateTime hireDate, UserRole role) {

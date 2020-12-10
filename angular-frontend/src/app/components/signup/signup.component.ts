@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
 
 
   addUser(): void {
-     
+    
     this.userService.addUser(this.user)
       .subscribe(data => {
         console.log(data)
