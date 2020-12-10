@@ -53,4 +53,17 @@ public class TaskRepositoryHibernate implements TaskRepository{
 		return sessionFactory.getCurrentSession().createCriteria(Task.class).list();
 	}
 
+	@Override
+	public boolean update(Task task) {
+		boolean ret = false;
+		try {
+			sessionFactory.getCurrentSession().update(task);
+			ret = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return ret;
+	}
+
 }

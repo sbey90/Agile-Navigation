@@ -77,56 +77,27 @@ public class TaskServiceImpl implements TaskService{
 			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
 			JsonObject rootobj = root.getAsJsonObject();
 			
-			
-			String taskName = rootobj.get("taskName").getAsString();
-			String category = rootobj.get("taskCategory").getAsString();
-			TaskCategory taskCategory = getTaskCategory(category);
-			
-			String status = rootobj.get("taskStatus").getAsString();
-			TaskStatus taskStatus = getTaskStatus(status);
-			
-			String description = rootobj.get("description").getAsString();
-			String priority = rootobj.get("taskPriority").getAsString();
-			TaskPriority taskPriority = getTaskPriority(priority);
-			
-			String employee = rootobj.get("employee").getAsString();
-			User emp = userService.getUserByUsername(employee);
-			
-			String manager = rootobj.get("manager").getAsString();
-			User man = userService.getUserByUsername(manager);
-			
-			LocalDateTime submittedDate = LocalDateTime.now();
-			String dueDate = rootobj.get("taskDueDate").getAsString();
+			Task newTask = getTaskInstance(rootobj);
 			
 			
-			Task newTask = new Task(taskName, taskCategory, taskStatus, description, taskPriority, emp, null, man, submittedDate, LocalDateTime.parse(dueDate, formatter));
+			
 			
 			int taskId = taskRepository.save(newTask);
 			
+			
 			if (taskId > 0) {
+				newTask.setTaskId(taskId);
 				params = getParams(newTask);
-//				params.addProperty("taskId", taskId);
-//				params.addProperty("taskName", newTask.getTaskName());
-//				params.addProperty("taskCategory", newTask.getTaskCategory().getCategory());
-//				params.addProperty("taskStatus", newTask.getTaskStatus().getStatus());
-//				params.addProperty("description", newTask.getDescription());
-//				params.addProperty("taskPriority", newTask.getTaskPriority().getPriority());
-//				params.addProperty("employee", emp.getUsername());
-//				
-//				params.addProperty("taskCompletedDate", "null");
-//				params.addProperty("manager", man.getUsername());
-//				params.addProperty("taskSubmittedDate", newTask.getTaskSubmittedDate().format(formatter));
-//				params.addProperty("taskDueDate", newTask.getTaskDueDate().format(formatter));
-//				
+				
 			} else {
 				System.out.println(taskId);
-				params.addProperty("status", "process failed in try block");
+				params.addProperty("status", "Failed to save task");
 			}
 			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			params.addProperty("status", "process failed in catch block");
+			params.addProperty("status", "Failed to save task");
 			
 		}
 		
@@ -135,8 +106,43 @@ public class TaskServiceImpl implements TaskService{
 
 	@Override
 	public String updateTask(HttpServletRequest req) {
-		// TODO Auto-generated method stub
-		return null;
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json;
+		
+		try {
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			
+			Task task = getTaskInstance(rootobj);
+			
+			String completedDate = rootobj.get("taskCompletedDate").getAsString();
+			
+			if (!completedDate.equals("null")) {
+				task.setTaskCompletedDate(LocalDateTime.parse(completedDate, formatter));
+			}
+			
+			int id = rootobj.get("taskId").getAsInt();
+			task.setTaskId(id);
+			
+			
+			
+			if (taskRepository.update(task)) {
+				params = getParams(task);
+			} else {
+				params.addProperty("status", "Failed to update task");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			params.addProperty("status", "Failed to update task");
+			
+		}
+		
+		
+		return gson.toJson(params);
 	}
 
 	@Override
@@ -181,6 +187,32 @@ public class TaskServiceImpl implements TaskService{
 		return null;
 	}	
 	
+	private Task getTaskInstance(JsonObject rootobj) throws Exception {
+		
+
+		String taskName = rootobj.get("taskName").getAsString();
+		String category = rootobj.get("taskCategory").getAsString();
+		TaskCategory taskCategory = getTaskCategory(category);
+		
+		String status = rootobj.get("taskStatus").getAsString();
+		TaskStatus taskStatus = getTaskStatus(status);
+		
+		String description = rootobj.get("description").getAsString();
+		String priority = rootobj.get("taskPriority").getAsString();
+		TaskPriority taskPriority = getTaskPriority(priority);
+		
+		String employee = rootobj.get("employee").getAsString();
+		User emp = userService.getUserByUsername(employee);
+		
+		String manager = rootobj.get("manager").getAsString();
+		User man = userService.getUserByUsername(manager);
+		
+		LocalDateTime submittedDate = LocalDateTime.now();
+		String dueDate = rootobj.get("taskDueDate").getAsString();
+		
+		return new Task(taskName, taskCategory, taskStatus, description, taskPriority, emp, null, man, submittedDate, LocalDateTime.parse(dueDate, formatter));
+	}
+	
 	private JsonObject getParams(Task t) {
 		JsonObject params = new JsonObject();
 		
@@ -195,7 +227,13 @@ public class TaskServiceImpl implements TaskService{
 		} else {
 			params.addProperty("employee", "null");
 		}
-		params.addProperty("taskCompletedDate", "null");
+		
+		if (t.getTaskCompletedDate() == null) {
+			params.addProperty("taskCompletedDate", "null");
+		} else {
+			params.addProperty("taskCompletedDate", t.getTaskCompletedDate().format(formatter));
+		}
+		
 		params.addProperty("manager", t.getManager().getUsername());
 		params.addProperty("taskSubmittedDate", t.getTaskSubmittedDate().format(formatter));
 		if (t.getTaskDueDate() != null ) {
@@ -205,6 +243,7 @@ public class TaskServiceImpl implements TaskService{
 		}
 		
 		return params;
+		
 	}
 	
 	private TaskCategory getTaskCategory(String category) {

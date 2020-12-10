@@ -15,4 +15,5 @@ public interface TaskRepository {
 	void save(TaskCategory category);
 	
 	List<Task> findAll();
+	boolean update(Task task);
 }

@@ -26,7 +26,7 @@ public class TaskControllerImpl implements TaskController {
 	@PostMapping("api/tasks/update")
 	public String updateTask(HttpServletRequest req) {
 		System.out.println("In updateTask");
-		return null;
+		return taskService.updateTask(req);
 	}
 
 	@PostMapping("api/tasks/assign")
