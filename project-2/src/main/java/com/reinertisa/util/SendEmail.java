@@ -1,16 +1,11 @@
 package com.reinertisa.util;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import java.util.Properties;
+import com.reinertisa.model.User;
 
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
-import com.reinertisa.model.User;
+import java.util.Properties;
 
 public class SendEmail {
 
