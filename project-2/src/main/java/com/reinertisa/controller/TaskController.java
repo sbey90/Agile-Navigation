@@ -9,5 +9,7 @@ public interface TaskController {
 	public String assignTask(HttpServletRequest req);
 	public String getAllTasks();
 	public String getTask(HttpServletRequest req);
+	public String getTaskByEmployee(HttpServletRequest req);
+	public String getTaskByManager(HttpServletRequest req);
 	
 }

@@ -77,56 +77,27 @@ public class TaskServiceImpl implements TaskService{
 			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
 			JsonObject rootobj = root.getAsJsonObject();
 			
-			
-			String taskName = rootobj.get("taskName").getAsString();
-			String category = rootobj.get("taskCategory").getAsString();
-			TaskCategory taskCategory = getTaskCategory(category);
-			
-			String status = rootobj.get("taskStatus").getAsString();
-			TaskStatus taskStatus = getTaskStatus(status);
-			
-			String description = rootobj.get("description").getAsString();
-			String priority = rootobj.get("taskPriority").getAsString();
-			TaskPriority taskPriority = getTaskPriority(priority);
-			
-			String employee = rootobj.get("employee").getAsString();
-			User emp = userService.getUserByUsername(employee);
-			
-			String manager = rootobj.get("manager").getAsString();
-			User man = userService.getUserByUsername(manager);
-			
-			LocalDateTime submittedDate = LocalDateTime.now();
-			String dueDate = rootobj.get("taskDueDate").getAsString();
+			Task newTask = getTaskInstance(rootobj);
 			
 			
-			Task newTask = new Task(taskName, taskCategory, taskStatus, description, taskPriority, emp, null, man, submittedDate, LocalDateTime.parse(dueDate, formatter));
+			
 			
 			int taskId = taskRepository.save(newTask);
 			
+			
 			if (taskId > 0) {
+				newTask.setTaskId(taskId);
 				params = getParams(newTask);
-//				params.addProperty("taskId", taskId);
-//				params.addProperty("taskName", newTask.getTaskName());
-//				params.addProperty("taskCategory", newTask.getTaskCategory().getCategory());
-//				params.addProperty("taskStatus", newTask.getTaskStatus().getStatus());
-//				params.addProperty("description", newTask.getDescription());
-//				params.addProperty("taskPriority", newTask.getTaskPriority().getPriority());
-//				params.addProperty("employee", emp.getUsername());
-//				
-//				params.addProperty("taskCompletedDate", "null");
-//				params.addProperty("manager", man.getUsername());
-//				params.addProperty("taskSubmittedDate", newTask.getTaskSubmittedDate().format(formatter));
-//				params.addProperty("taskDueDate", newTask.getTaskDueDate().format(formatter));
-//				
+				
 			} else {
 				System.out.println(taskId);
-				params.addProperty("status", "process failed in try block");
+				params.addProperty("status", "Failed to save task");
 			}
 			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			params.addProperty("status", "process failed in catch block");
+			params.addProperty("status", "Failed to save task");
 			
 		}
 		
@@ -135,8 +106,43 @@ public class TaskServiceImpl implements TaskService{
 
 	@Override
 	public String updateTask(HttpServletRequest req) {
-		// TODO Auto-generated method stub
-		return null;
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json;
+		
+		try {
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			
+			Task task = getTaskInstance(rootobj);
+			
+			String completedDate = rootobj.get("taskCompletedDate").getAsString();
+			
+			if (!completedDate.equals("null")) {
+				task.setTaskCompletedDate(LocalDateTime.parse(completedDate, formatter));
+			}
+			
+			int id = rootobj.get("taskId").getAsInt();
+			task.setTaskId(id);
+			
+			
+			
+			if (taskRepository.update(task)) {
+				params = getParams(task);
+			} else {
+				params.addProperty("status", "Failed to update task");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			params.addProperty("status", "Failed to update task");
+			
+		}
+		
+		
+		return gson.toJson(params);
 	}
 
 	@Override
@@ -168,7 +174,10 @@ public class TaskServiceImpl implements TaskService{
 			}
 			
 		} catch (Exception e) {
-			
+			logger.debug(e);
+			params = new JsonObject();
+			params.addProperty("status", "Failed to get All tasks");
+			json = gson.toJson(params);
 		}
 		return json;
 	}
@@ -177,10 +186,136 @@ public class TaskServiceImpl implements TaskService{
 
 	@Override
 	public String getTask(HttpServletRequest req) {
-		// TODO Auto-generated method stub
+		
 		return null;
-	}	
+	}
 	
+	/**
+	 * Get Tasks by Employee they belong to
+	 */
+	@Override
+	public String getTaskByEmployee(HttpServletRequest req) {
+		
+		List<Task> tasks = null;
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json = null;
+		try {
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			int id = rootobj.get("userId").getAsInt();
+			//String username = rootobj.get("username").getAsString();
+			//User u = userService.getUserByUsername(username);
+			
+			tasks = taskRepository.findByEmployee(id);
+			
+			JsonArray jobj = new JsonArray();
+			if (tasks == null || tasks.size() == 0) {
+				params.addProperty("status", "no record");
+				json = gson.toJson(params);
+			} else {
+				
+				
+				for (Task t: tasks) {					
+					jobj.add(getParams(t));
+				}
+				json = jobj.toString();
+			}
+			
+		} catch (Exception e) {
+			logger.debug(e);
+			params = new JsonObject();
+			params.addProperty("status", "Failed to get Employee tasks");
+			json = gson.toJson(params);
+		}
+		
+		return json;
+	}
+
+	/**
+	 * Get tasks by Manager they belong to
+	 */
+	@Override
+	public String getTaskByManager(HttpServletRequest req) {
+		List<Task> tasks = null;
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json = null;
+		
+		try {
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			
+			int id = rootobj.get("userId").getAsInt();
+			
+			tasks = taskRepository.findByManager(id);
+			
+			JsonArray jobj = new JsonArray();
+			if (tasks == null || tasks.size() == 0) {
+				params.addProperty("status", "no record");
+				json = gson.toJson(params);
+			} else {
+				
+				for (Task t: tasks) {					
+					jobj.add(getParams(t));
+				}
+				json = jobj.toString();
+			}
+			
+			
+		} catch (Exception e) {
+			logger.debug(e);
+			params = new JsonObject();
+			params.addProperty("status", "Failed to get Manager tasks");
+			json = gson.toJson(params);
+		}
+		
+		return json;
+	}
+	
+	/**
+	 * Create a Task object based off of Json task representation fields 
+	 * 
+	 * @param rootobj - JsonObject consisting of params to make Task object of
+	 * @return - Task object representing params in JsonObject
+	 * @throws Exception - to be handled in caller's try catch
+	 */
+	private Task getTaskInstance(JsonObject rootobj) throws Exception {
+		
+
+		String taskName = rootobj.get("taskName").getAsString();
+		String category = rootobj.get("taskCategory").getAsString();
+		TaskCategory taskCategory = getTaskCategory(category);
+		
+		String status = rootobj.get("taskStatus").getAsString();
+		TaskStatus taskStatus = getTaskStatus(status);
+		
+		String description = rootobj.get("description").getAsString();
+		String priority = rootobj.get("taskPriority").getAsString();
+		TaskPriority taskPriority = getTaskPriority(priority);
+		
+		String employee = rootobj.get("employee").getAsString();
+		User emp = userService.getUserByUsername(employee);
+		
+		String manager = rootobj.get("manager").getAsString();
+		User man = userService.getUserByUsername(manager);
+		
+		LocalDateTime submittedDate = LocalDateTime.now();
+		String dueDate = rootobj.get("taskDueDate").getAsString();
+		
+		return new Task(taskName, taskCategory, taskStatus, description, taskPriority, emp, null, man, submittedDate, LocalDateTime.parse(dueDate, formatter));
+	}
+	
+	/**
+	 * Build JsonObject params from Task object
+	 * 
+	 * @param t - task object to be parameterized
+	 * @return - JsonObject of fields for JSON representation of task
+	 */
 	private JsonObject getParams(Task t) {
 		JsonObject params = new JsonObject();
 		
@@ -195,7 +330,13 @@ public class TaskServiceImpl implements TaskService{
 		} else {
 			params.addProperty("employee", "null");
 		}
-		params.addProperty("taskCompletedDate", "null");
+		
+		if (t.getTaskCompletedDate() == null) {
+			params.addProperty("taskCompletedDate", "null");
+		} else {
+			params.addProperty("taskCompletedDate", t.getTaskCompletedDate().format(formatter));
+		}
+		
 		params.addProperty("manager", t.getManager().getUsername());
 		params.addProperty("taskSubmittedDate", t.getTaskSubmittedDate().format(formatter));
 		if (t.getTaskDueDate() != null ) {
@@ -205,8 +346,14 @@ public class TaskServiceImpl implements TaskService{
 		}
 		
 		return params;
+		
 	}
 	
+	/**
+	 * Get Task Category object for JPA Persistence 
+	 * @param category - category name
+	 * @return - instance of TaskCategory where category = category name, OR null
+	 */
 	private TaskCategory getTaskCategory(String category) {
 		TaskCategory ret = null;
 		
@@ -227,6 +374,11 @@ public class TaskServiceImpl implements TaskService{
 		return ret;
 	}
 	
+	/**
+	 * Get TaskStatus object for JPA Persistence 
+	 * @param status - status name
+	 * @return - instance of TaskStatus where status = status name, OR null
+	 */
 	private TaskStatus getTaskStatus(String status) {
 		TaskStatus ret = null;
 		if (status.equals("Pending")) {
@@ -239,6 +391,11 @@ public class TaskServiceImpl implements TaskService{
 		return ret;
 	}
 	
+	/**
+	 * Get Task Priority object for JPA Persistence 
+	 * @param priority - priority name
+	 * @return - instance of TaskPriority where priority = priority name, OR null
+	 */
 	private TaskPriority getTaskPriority(String priority) {
 		TaskPriority ret = null;
 		
@@ -253,5 +410,7 @@ public class TaskServiceImpl implements TaskService{
 		}
 		return ret;
 	}
+
+	
 
 }
