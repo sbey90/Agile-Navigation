@@ -1,0 +1,17 @@
+.background {
+    height: 950px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h3 {
+    color: black;
+}
+
+.table-top {
+    background-color: transparent;
+}
+
+.background{
+    background-color: transparent;
+}
