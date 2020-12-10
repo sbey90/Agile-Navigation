@@ -21,11 +21,19 @@ const routes: Routes = [
   {path: '', redirectTo: '/api/signin', pathMatch: 'full'},
   {path: 'api/signin', component: SigninComponent},
   {path: 'api/signup', component: SignupComponent},
-  {path: 'api/mngHome', component: HomeComponent},
-  {path: 'api/users', component: ShowUsersComponent},
+  {path: 'api/forgotPass', component: ForgotpasswordComponent},
 
+  {path: 'api/mngHome', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'api/createTask', component: CreateTaskComponent, canActivate: [AuthGuard]},
+  {path: 'api/assignTask', component: AssignTaskComponent, canActivate: [AuthGuard]},
+  {path: 'api/showTasks', component: ShowTasksComponent, canActivate: [AuthGuard]},
+  {path: 'api/users', component: ShowUsersComponent, canActivate: [AuthGuard]},
+  {path: 'api/getUser', component: ShowProfileComponent, canActivate: [AuthGuard]},
 
-  {path: 'api/users', component: ShowUsersComponent},
+  {path: 'api/empHome', component: EmpHomeComponent, canActivate: [AuthGuard]},
+  {path: 'api/showTasks', component: EmpShowTasksComponent, canActivate: [AuthGuard]},
+  {path: 'api/getUser', component: EmpShowProfileComponent, canActivate: [AuthGuard]},
+  {path: 'api/dashboard', component: EmpDashboardComponent, canActivate: [AuthGuard]},
 
 
 ];

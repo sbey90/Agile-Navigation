@@ -24,6 +24,16 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
+  getUser(userId: number): Observable<User> {
+
+    return this.http.post<User>(`${BASE_URL}getUser`, {userId: userId}, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<User>('fgetUser'))
+      );
+      
+  }
+
+
   getAllUsers(): Observable<User[]> {
 
     return this.http.get<User[]>(`${BASE_URL}getAllUsers`)
@@ -41,6 +51,14 @@ export class UserService {
         catchError(this.handleError<any>('addUser'))
       )
   }
+
+  updateUser(user: User): Observable<any> {
+    return this.http.put(`${BASE_URL}updateUser`, user, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<any>('updateCat'))
+      );
+  }
+
 
   forgotPass(emailData : any): Observable<any> {
 

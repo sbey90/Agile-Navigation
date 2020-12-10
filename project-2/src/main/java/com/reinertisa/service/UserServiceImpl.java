@@ -38,7 +38,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public String signup(HttpServletRequest req) {
 
-		
 		Gson gson = new Gson();
 		gson = new GsonBuilder().create();
 		JsonObject params = new JsonObject();
@@ -55,26 +54,24 @@ public class UserServiceImpl implements UserService {
 			String email = rootobj.get("email").getAsString();
 			LocalDateTime hireDate = LocalDateTime.now();
 			String role = rootobj.get("role").getAsString();
-			
-			
-			if(!userRepository.isAvailableUsername(username)) {
+
+			if (!userRepository.isAvailableUsername(username)) {
 				params.addProperty("status", "username not available");
 				String json = gson.toJson(params);
 				return json;
 			}
-			
-			if(!userRepository.isAvailableEmail(email)) {
+
+			if (!userRepository.isAvailableEmail(email)) {
 				params.addProperty("status", "email not available");
 				String json = gson.toJson(params);
 				return json;
-			}		
+			}
 
-	
 			User newUser = new User(username, password, firstName, lastName, email, hireDate, new UserRole(1, role));
-			
+
 			userRepository.save(newUser);
 			User user = getUserByUsername(username);
-			
+
 			params.addProperty("userId", user.getUserId());
 			params.addProperty("username", user.getUsername());
 			params.addProperty("password", user.getPassword());
@@ -100,17 +97,16 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public String getAllUsers() {
-		
-		
+
 		Gson gson = new Gson();
 		gson = new GsonBuilder().create();
 		JsonObject params1 = new JsonObject();
 		String json = "";
-		
+
 		try {
-			
+
 			List<User> users = userRepository.findAll();
-			
+
 			if (users == null || users.size() == 0) {
 				params1.addProperty("status", "no record");
 				json = gson.toJson(params1);
@@ -131,20 +127,20 @@ public class UserServiceImpl implements UserService {
 					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 					String hireDateFormatted = user.getHireDate().format(formatter);
 					params.addProperty("hireDate", hireDateFormatted);
-				
+
 					jobj.add(params);
 				}
 
 				json = jobj.toString();
 			}
-			
+
 		} catch (Exception e) {
 			params1.addProperty("status", "process failed");
 			json = gson.toJson(params1);
 		}
-		
+
 		return json;
-		
+
 	}
 
 	@Override
@@ -165,7 +161,7 @@ public class UserServiceImpl implements UserService {
 		gson = new GsonBuilder().create();
 		JsonObject params = new JsonObject();
 		String json = "";
-		
+
 		try {
 
 			JsonParser jsonParser = new JsonParser();
@@ -185,8 +181,8 @@ public class UserServiceImpl implements UserService {
 				params.addProperty("lastName", user.getLastName());
 				params.addProperty("role", user.getRole().getRole());
 				params.addProperty("status", "signin success");
-		
-				json = gson.toJson(params);			
+
+				json = gson.toJson(params);
 
 			} else {
 				params.addProperty("status", "signin failed");
@@ -197,7 +193,7 @@ public class UserServiceImpl implements UserService {
 			params.addProperty("status", "signin failed");
 			json = gson.toJson(params);
 		}
-		
+
 		return json;
 	}
 
@@ -207,7 +203,6 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
-
 	@SuppressWarnings("static-access")
 	@Override
 	public String forgotPass(HttpServletRequest req) {
@@ -215,7 +210,7 @@ public class UserServiceImpl implements UserService {
 		Gson gson = new Gson();
 		gson = new GsonBuilder().create();
 		JsonObject params = new JsonObject();
-		String json= "";
+		String json = "";
 
 		try {
 
@@ -224,32 +219,144 @@ public class UserServiceImpl implements UserService {
 			JsonObject rootobj = root.getAsJsonObject();
 
 			String toEmail = rootobj.get("email").getAsString();
-			
+
 			User user = userRepository.findUserByEmail(toEmail);
-			
 
 			if (user != null) {
 
 				SendEmail email = new SendEmail();
-				if(email.sendEmail(user)) {
+				if (email.sendEmail(user)) {
 					params.addProperty("status", "email sent successfully");
 					json = gson.toJson(params);
 				} else {
 					params.addProperty("status", "email not sent");
 					json = gson.toJson(params);
-				}			
+				}
 
 			} else {
 				params.addProperty("status", "invalid email");
 				json = gson.toJson(params);
-			}			
+			}
 
 		} catch (Exception e) {
 			params.addProperty("status", "email not sent");
 			json = gson.toJson(params);
 		}
+
+		return json;
+	}
+
+	@Override
+	public String getUser(HttpServletRequest req) {
+
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json = "";
+		
+		try {
+
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+
+			int userId = rootobj.get("userId").getAsInt();
+			User user = userRepository.findUserByUserId(userId);
+			
+			if (user == null) {
+				params.addProperty("status", "no user found");
+				json = gson.toJson(params);
+			} else {
+
+				params.addProperty("userId", user.getUserId());
+				params.addProperty("username", user.getUsername());
+				params.addProperty("password", user.getPassword());
+				params.addProperty("firstName", user.getFirstName());
+				params.addProperty("lastName", user.getLastName());
+				params.addProperty("email", user.getEmail());
+				params.addProperty("role", user.getRole().getRole());
+
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+				String hireDateFormatted = user.getHireDate().format(formatter);
+				params.addProperty("hireDate", hireDateFormatted);
+
+				json = gson.toJson(params);
+			}
+
+		} catch (Exception e) {
+			params.addProperty("status", "no user found");
+			json = gson.toJson(params);
+		}
+
+		return json;
+
+	}
+
+	@Override
+	public String updateUser(HttpServletRequest req) {	
+		
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json = "";
+		
+		System.out.println("Helloooo");
+		System.out.println("Helloooo");
+		System.out.println("Helloooo");
+		System.out.println("Helloooo");
+		
+		try {
+			
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			
+			int userId = rootobj.get("userId").getAsInt();
+			String username = rootobj.get("username").getAsString();
+			String password = rootobj.get("password").getAsString();
+			String firstName = rootobj.get("firstName").getAsString();
+			String lastName = rootobj.get("lastName").getAsString();
+			String email = rootobj.get("email").getAsString();
+			
+			User user = userRepository.findUserByUserId(userId);
+			
+			System.out.println(user);
+
+			if (!userRepository.isAvailableUsername(username)) {
+				if(!user.getUsername().equals(username)){
+					params.addProperty("status", "username not available");
+					json = gson.toJson(params);
+					return json;
+				}
+			}
+			
+			if(!userRepository.isAvailableEmail(email)) {
+				if(!user.getEmail().equals(email)){
+					params.addProperty("status", "email not available");
+					json = gson.toJson(params);
+					return json;
+				}
+			}
+			
+			User updateUser = new User(userId, username, password, firstName, lastName, email);
+			
+			if(userRepository.updateUser(updateUser)) {
+				params.addProperty("status", "profile updated successfully");
+				json = gson.toJson(params);
+			} else {
+				params.addProperty("status", "profile not updated");
+				json = gson.toJson(params);
+			}		
+			
+			
+			
+		} catch (Exception e) {
+			params.addProperty("status", "profile not updated");
+			json = gson.toJson(params);
+		}
 		
 		return json;
+		
 	}
 
 }

@@ -1,29 +1,15 @@
 package com.reinertisa.controller;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.reinertisa.model.User;
-import com.reinertisa.model.UserRole;
 import com.reinertisa.service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -57,10 +43,16 @@ public class UserControlerImpl implements UserController {
 	}
 
 	@PostMapping("api/getUser")
-	public @ResponseBody User getUser(User user, HttpServletRequest req) {
-
-		// TODO Auto-generated method stub
-		return null;
+	public @ResponseBody String getUser(HttpServletRequest req) {
+		
+		return userService.getUser(req);
+		
+	}
+	
+	@PutMapping("api/updateUser")
+	public @ResponseBody String updateUser(HttpServletRequest req) {
+		
+		return userService.updateUser(req);		
 	}
 
 	@GetMapping("api/getAllUsers")

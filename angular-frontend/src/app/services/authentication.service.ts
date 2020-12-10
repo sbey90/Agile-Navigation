@@ -27,6 +27,7 @@ export class AuthenticationService {
 
   isAuthenticated = false;
   userRole: string = "";
+  userId : number = 0;
   //data : any;
 
   authenticate(signInData : SignInData): Observable<any> {
@@ -41,9 +42,11 @@ export class AuthenticationService {
 
             if(data.role == 'Software Manager'){
               this.userRole = data.role;
+              this.userId = data.userId;
               this.router.navigate(['api/mngHome'])
             } else {
               this.userRole = data.role;
+              this.userId = data.userId;
               this.router.navigate(['api/empHome'])
             }
             

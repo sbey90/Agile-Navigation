@@ -8,6 +8,7 @@ import javax.persistence.TypedQuery;
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -144,6 +145,58 @@ public class UserRepositoryHibernate implements UserRepository{
 			logger.debug(e);
 		}			
 		return null;
+	}
+
+	@Override
+	public User findUserByUserId(int userId) {
+		
+		try {			
+			
+			String sql = "from User WHERE userId= : userId";
+			
+			TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(sql, User.class);
+			query.setParameter("userId", userId);
+			
+			User user = query.getSingleResult();
+			
+			return user;
+			
+		} catch (Exception e) {
+			logger.debug(e);
+		}	
+		
+		return null;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean updateUser(User user) {
+
+		
+		try {
+		
+			
+			String sql = "UPDATE User SET username= :username, password= :password, firstName= :firstName"
+					+ ", lastName= :lastName, email= :email WHERE userId= :userId";					
+			
+			Query<User> query = sessionFactory.getCurrentSession().createQuery(sql);
+			query.setParameter("userId", user.getUserId());
+			query.setParameter("username", user.getUsername());
+			query.setParameter("password", user.getPassword());
+			query.setParameter("firstName", user.getFirstName());
+			query.setParameter("lastName", user.getLastName());
+			query.setParameter("email", user.getEmail());
+			
+			int count = query.executeUpdate();
+			
+			if(count > 0)
+				return true;
+			
+		} catch (Exception e) {
+			logger.debug(e);
+		}	
+		
+		return false;
 	}	
 	
 	

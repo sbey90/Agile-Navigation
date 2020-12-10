@@ -1,3 +1,4 @@
+import { UpdateProfileComponent } from './components/manager/update-profile/update-profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -36,7 +37,8 @@ import { DashboardComponent } from './components/manager/dashboard/dashboard.com
     EmpShowProfileComponent,
     EmpShowTasksComponent,
     EmpDashboardComponent,
-    DashboardComponent
+    DashboardComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
