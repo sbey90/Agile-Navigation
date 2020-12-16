@@ -67,9 +67,11 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input matInput [matDatepicker]="picker" placeholder="Enter date" [(ngModel)]="task.taskDueDate" id="taskDueDate" name="taskDueDate" required>
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker color="primary" #picker></mat-datepicker>
+                            <mat-form-field class="form-control my-2 p-2" appearance="fill"> 
+                                <input matInput [matDatepicker]="picker" placeholder="Enter Due Date" [(ngModel)]="task.taskDueDate" id="taskDueDate" name="taskDueDate" required>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker color="primary" #picker></mat-datepicker>
+                            </mat-form-field>
                         </div>
                     </div>
 
