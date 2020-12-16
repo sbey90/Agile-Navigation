@@ -197,6 +197,47 @@ public class UserRepositoryHibernate implements UserRepository{
 		}	
 		
 		return false;
+	}
+
+	@Override
+	public List<User> findAllByUsername(String username) {
+		try {			
+			
+			String sql = "from User WHERE username LIKE :searchKey";
+			
+			TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(sql, User.class);
+			query.setParameter("searchKey", "%" + username + "%");
+			
+			List<User> users = query.getResultList();
+			
+			return users;
+			
+		} catch (Exception e) {
+			logger.debug(e);
+		}	
+		
+		return null;
+	}
+
+	@Override
+	public User findByFirstNameAndLastName(String firstName, String lastName) {
+		try {			
+			
+			String sql = "from User WHERE firstName= : firstName AND lastName= : lastName";
+			
+			TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(sql, User.class);
+			query.setParameter("firstName", firstName);
+			query.setParameter("lastName", lastName);
+			
+			User user = query.getSingleResult();
+			
+			return user;
+			
+		} catch (Exception e) {
+			logger.debug(e);
+		}	
+		
+		return null;
 	}	
 	
 	

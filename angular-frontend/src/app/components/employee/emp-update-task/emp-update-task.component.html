@@ -1,0 +1,104 @@
+<section class="Form my-4 mx-5" *ngIf="task">
+
+    <div class="container">
+
+        <div class="row no-gutters">
+
+            <div class="col-lg-5">
+                <img [src]=myImage class="img-fluid"alt="">
+            </div>
+
+            <div class="col-lg-7 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">Update Task</h1>
+                
+                <form (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                   
+                    <div class="form-row">
+                       
+                        <div class="col-lg-7">                            
+                            <input type="text" class="form-control my-2 p-4" 
+                            [(ngModel)]="task.taskName" id="taskName" name="taskName" readonly required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <select [(ngModel)]="task.taskStatus" name="taskStatus"
+                            id="taskStatus" class="form-control my-2 p-4" required>
+                                <option value="" disabled selected>Update task status</option>
+                                <option value="1">Pending</option>
+                                <option value="2">In Progress</option>
+                                <option value="3">Completed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" class="form-control my-2 p-4" 
+                            [(ngModel)]="task.taskCategory" id="taskCategory" name="taskCategory" readonly required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" class="form-control my-2 p-4" 
+                            [(ngModel)]="task.taskPriority" id="taskPriority" name="taskPriority" readonly required>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" class="form-control my-2 p-4" 
+                            [(ngModel)]="task.manager" id="manager" name="manager" readonly required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" class="form-control my-2 p-4" 
+                            [(ngModel)]="task.taskSubmittedDate" id="taskSubmittedDate" name="taskSubmittedDate" readonly required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" class="form-control my-2 p-4" 
+                            [(ngModel)]="task.taskDueDate" id="taskDueDate" name="taskDueDate" readonly required>
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn1 mt-3 mb-3" value="updateTask">Update Task</button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7 mt-1 mb-2">
+                            <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">
+                                <h4>Please fill all fields</h4>
+                            </div>        
+
+                            
+                            <div class="alert alert-danger" role="alert" *ngIf="taskNotUpdated">
+                                <h4>Task not updated, try again please!</h4>
+                            </div>  
+
+                            <div class="alert alert-success" role="alert" *ngIf="taskUpdated">
+                                <h4>Task updated successfully</h4>
+                            </div>  
+                            
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+

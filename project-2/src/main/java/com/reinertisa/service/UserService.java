@@ -10,7 +10,12 @@ public interface UserService {
 
 	public String signup(HttpServletRequest req);
 	public String getAllUsers();
+	public String getAllUsers(HttpServletRequest req);
+	
 	public User getUserByUsername(String username);
+	public User getUser(String firstName, String lastName);
+	public User getUser(int userId);
+	
 	public String getUser(HttpServletRequest req);
 	public String updateUser(HttpServletRequest req);
 	

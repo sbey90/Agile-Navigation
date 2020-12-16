@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.reinertisa.service.TaskService;
@@ -19,32 +21,31 @@ public class TaskControllerImpl implements TaskController {
 	
 	@PostMapping("api/tasks/add")
 	public String addTask(HttpServletRequest req) {
-		System.out.println("In addTask");
 		return taskService.addTask(req);
 	}
 
-	@PostMapping("api/tasks/update")
+	@PutMapping("api/tasks/update")
 	public String updateTask(HttpServletRequest req) {
 		System.out.println("In updateTask");
 		return taskService.updateTask(req);
 	}
 
-	@PostMapping("api/tasks/assign")
-	public String assignTask(HttpServletRequest req) {
-		System.out.println("In assignTask");
-		return taskService.updateTask(req);
-	}
-
-	@GetMapping("api/tasks/all")
-	public String getAllTasks() {
+//	@GetMapping("api/tasks/all")
+//	public String getAllTasks() {
+//		System.out.println("In getAllTasks");
+//		return taskService.getAllTasks();
+//	}
+	
+	@PostMapping("api/tasks/all")
+	public String getAllTasks(HttpServletRequest req) {
 		System.out.println("In getAllTasks");
-		return taskService.getAllTasks();
+		return taskService.getAllTasks(req);
 	}
 
 	@PostMapping("api/tasks/getTask")
-	public String getTask(HttpServletRequest req) {
+	public  @ResponseBody String getTask(HttpServletRequest req) {	
 		System.out.println("In getTask");
-		return null;
+		return taskService.getTask(req);
 	}
 
 	@GetMapping("api/tasks/employee")
@@ -59,5 +60,5 @@ public class TaskControllerImpl implements TaskController {
 		System.out.println("In getTask by Manager");
 		return taskService.getTaskByManager(req);
 	}
-
+	
 }

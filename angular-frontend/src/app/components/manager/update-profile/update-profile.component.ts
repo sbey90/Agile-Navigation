@@ -84,71 +84,73 @@ export class UpdateProfileComponent implements OnInit {
           this.accountUpdated = true;
         }
       })
-  // onSubmit(signInForm: NgForm){
+    }
 
+      onSubmit(signInForm: NgForm){
 
-  //    if (!signInForm.valid) {
-  //     this.isFormInvalid = true;
-  //     this.passwordNotMatch= false;
-  //     this.usernameNotAvailable = false;
-  //     this.emailNotAvailable = false;          
-  //     this.accountNotUpdated = false;
-  //     this.accountUpdated = false;
-  //     return;
-  //   }
+        console.log(signInForm)
+     if (!signInForm.valid) {
+      this.isFormInvalid = true;
+      this.passwordNotMatch= false;
+      this.usernameNotAvailable = false;
+      this.emailNotAvailable = false;          
+      this.accountNotUpdated = false;
+      this.accountUpdated = false;
+      return;
+    }
 
     
-  //   if(signInForm.value.password != signInForm.value.confirmPassword){      
-  //     this.isFormInvalid = false;
-  //     this.passwordNotMatch= true;
-  //     this.usernameNotAvailable = false;
-  //     this.emailNotAvailable = false;          
-  //     this.accountNotUpdated = false;
-  //     this.accountUpdated = false;
-  //     return;
-  //   }
-
-
-  //   console.log(this.user);
-  //   this.userService.updateUser(this.user)
-  //     .subscribe(data => {
-  //       console.log(data)
-        
-  //       if(data.status == 'username not available'){
-  //         this.isFormInvalid = false;
-  //         this.passwordNotMatch= false;
-  //         this.usernameNotAvailable = true;
-  //         this.emailNotAvailable = false;          
-  //         this.accountNotUpdated = false;
-  //         this.accountUpdated = false;
-
-  //       } else if(data.status == 'email not available'){
-  //         this.isFormInvalid = false;
-  //         this.passwordNotMatch= false;
-  //         this.usernameNotAvailable = false;
-  //         this.emailNotAvailable = true;          
-  //         this.accountNotUpdated = false;
-  //         this.accountUpdated = false;
-
-  //       } else if(data.status == 'profile not updated'){
-  //         this.isFormInvalid = false;
-  //         this.passwordNotMatch= false;
-  //         this.usernameNotAvailable = false;
-  //         this.emailNotAvailable = false;          
-  //         this.accountNotUpdated = true;
-  //         this.accountUpdated = false;
-
-  //       } else if(data.status == 'profile updated successfully'){
-  //         this.isFormInvalid = false;
-  //         this.passwordNotMatch= false;
-  //         this.usernameNotAvailable = false;
-  //         this.emailNotAvailable = false;          
-  //         this.accountNotUpdated = false;
-  //         this.accountUpdated = true;
-  //       }
-  //     })
-  // }
-
-
+    if(signInForm.value.password != signInForm.value.confirmPassword){      
+      this.isFormInvalid = false;
+      this.passwordNotMatch= true;
+      this.usernameNotAvailable = false;
+      this.emailNotAvailable = false;          
+      this.accountNotUpdated = false;
+      this.accountUpdated = false;
+      return;
     }
+
+
+    console.log(this.user);
+    this.userService.updateUser(this.user)
+      .subscribe(data => {
+        console.log(data)
+        
+        if(data.status == 'username not available'){
+          this.isFormInvalid = false;
+          this.passwordNotMatch= false;
+          this.usernameNotAvailable = true;
+          this.emailNotAvailable = false;          
+          this.accountNotUpdated = false;
+          this.accountUpdated = false;
+
+        } else if(data.status == 'email not available'){
+          this.isFormInvalid = false;
+          this.passwordNotMatch= false;
+          this.usernameNotAvailable = false;
+          this.emailNotAvailable = true;          
+          this.accountNotUpdated = false;
+          this.accountUpdated = false;
+
+        } else if(data.status == 'profile not updated'){
+          this.isFormInvalid = false;
+          this.passwordNotMatch= false;
+          this.usernameNotAvailable = false;
+          this.emailNotAvailable = false;          
+          this.accountNotUpdated = true;
+          this.accountUpdated = false;
+
+        } else if(data.status == 'profile updated successfully'){
+          this.isFormInvalid = false;
+          this.passwordNotMatch= false;
+          this.usernameNotAvailable = false;
+          this.emailNotAvailable = false;          
+          this.accountNotUpdated = false;
+          this.accountUpdated = true;
+        }
+      })
+  }
+
+
+
 }

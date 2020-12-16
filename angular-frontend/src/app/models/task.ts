@@ -7,8 +7,10 @@ export class Task{
     description: string;
     taskPriority: string;
     employee: string;
+    employeeId: number;
     taskCompletedDate: string;
     manager: string;
+    managerId : number;
     taskSubmittedDate: string;
     taskDueDate: string;
 
@@ -19,8 +21,10 @@ export class Task{
         description: string,
         taskPriority: string,
         employee: string,
+        employeeId: number,
         taskCompletedDate: string,
         manager: string,
+        managerId: number,
         taskSubmittedDate: string,
         taskDueDate: string){
 
@@ -30,9 +34,11 @@ export class Task{
 		this.taskStatus = taskStatus;
 		this.description = description;
 		this.taskPriority = taskPriority;
-		this.employee = employee;
+        this.employee = employee;
+        this.employeeId = employeeId;
 		this.taskCompletedDate = taskCompletedDate;
-		this.manager = manager;
+        this.manager = manager;
+        this.managerId = managerId;
 		this.taskSubmittedDate = taskSubmittedDate;
         this.taskDueDate = taskDueDate;
         

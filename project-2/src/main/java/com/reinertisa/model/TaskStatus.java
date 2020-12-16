@@ -24,6 +24,12 @@ public class TaskStatus {
 	}
 
 	
+	
+	public TaskStatus(int statusId) {
+		super();
+		this.statusId = statusId;
+	}
+
 	public TaskStatus(int statusId, String status) {
 		super();
 		this.statusId = statusId;

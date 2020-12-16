@@ -57,7 +57,14 @@ public class UserControlerImpl implements UserController {
 
 	@GetMapping("api/getAllUsers")
 	public @ResponseBody String getAllUsers() {
+		System.out.println("We are here");
 		return userService.getAllUsers();
+	}
+
+	@PostMapping("api/searchUser")
+	public @ResponseBody String getAllUsers(HttpServletRequest req) {
+		System.out.println("XXXXXXXXXXXXXXXXXXXXXXX");
+		return userService.getAllUsers(req);
 	}
 
 }

@@ -19,14 +19,20 @@ public class TaskPriority {
 	}
 	
 
+	public TaskPriority(int priorityId) {
+	
+		this.priorityId = priorityId;
+	}
+
+
 	public TaskPriority(String priority) {
-		super();
+	
 		this.priority = priority;
 	}
 
 
 	public TaskPriority(int priorityId, String priority) {
-		super();
+	
 		this.priorityId = priorityId;
 		this.priority = priority;
 	}

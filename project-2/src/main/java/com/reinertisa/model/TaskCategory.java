@@ -18,6 +18,11 @@ public class TaskCategory {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+	public TaskCategory(int categoryId) {
+		super();
+		this.categoryId = categoryId;
+	}
 
 	public TaskCategory(String category) {
 		super();

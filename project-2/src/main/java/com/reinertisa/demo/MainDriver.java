@@ -29,29 +29,10 @@ public class MainDriver {
 		UserService userService = appContext.getBean("userService", UserService.class);
 		TaskService taskService = appContext.getBean("taskService", TaskService.class);
 		
-//		setDatabase(userService, taskService);
+		setDatabase(userService, taskService);
 
 		
-//		userService.signup(new User("isax", "111", "Isa", "Reinert", "reinert.isa@gmail.com",LocalDateTime.now(), 
-//								 new UserRole(1, "Analyst")));
-//		userService.signup(new User("alejandro", "333", "Alejandro", "Garza", "alejandro.garza@revature.net",LocalDateTime.now(), 
-//				 				 new UserRole(2, "Software Developer")));
-//		userService.signup(new User("jeremy", "444", "Jeremy", "Critchley", "jeremycritchley@gmail.com",LocalDateTime.now(), 
-//								 new UserRole(3, "Software Developer")));
-//		userService.signup(new User("connor", "555", "Connor", "Ryan", "connor.ryan@revature.net",LocalDateTime.now(), 
-//				                 new UserRole(3, "Software Architecture")));
-//		userService.signup(new User("saleel", "222", "Saleel", "Bey", "beysaleel7@gmail.com",LocalDateTime.now(), 
-//								 new UserRole(4, "Software Manager")));
-//		
-//		System.out.println("Users created Successfully");
-//		
-//		
-//		taskService.addTask(new Task("project-2", new TaskCategory(1, "Planning"), 
-//							new TaskStatus(1, "Pending"), "Thank you",
-//							new TaskPriority(1, "Do Now"), new User(2), LocalDateTime.now(), 
-//							new User(3), LocalDateTime.now(), LocalDateTime.now()));
-//
-//		System.out.println("Task created Successfully");
+		System.out.println("Task created Successfully");
 	}
 	
 	public static void setDatabase(UserService userService, TaskService taskService) {
@@ -72,15 +53,12 @@ public class MainDriver {
 		///////////////Task Status Table Set Up//////////////////////
 		TaskStatus status1 = new TaskStatus(1, "Pending");
 		TaskStatus status2 = new TaskStatus(2, "In Progress");
-		TaskStatus status3 = new TaskStatus(3, "In Test");
-		TaskStatus status4 = new TaskStatus(4, "In Progress");
-		TaskStatus status5 = new TaskStatus(5, "In Test");
+		TaskStatus status3 = new TaskStatus(3, "Completed");
 		
 		taskService.createTaskStatusTable(status1);
 		taskService.createTaskStatusTable(status2);
 		taskService.createTaskStatusTable(status3);
-		taskService.createTaskStatusTable(status4);
-		taskService.createTaskStatusTable(status5);
+
 		System.out.println("Task Status Table Created Successfully");
 		
 		///////////////Task Category Table Set Up////////////////////		
@@ -114,6 +92,7 @@ public class MainDriver {
 		
 		System.out.println("Task Priority Table Created Successfully");
 	}
-	
+
+
 	
 }

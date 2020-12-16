@@ -60,6 +60,22 @@ export class UserService {
   }
 
 
+
+   searchUsers(term: string): Observable<User[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+
+    return  this.http.post<any>(`${BASE_URL}searchUser`, {username: term}, this.httpOptions)
+    .pipe(
+      tap(x => x.length ? 
+       console.log(`found users matching ${term}`) :
+       console.log(`no users foudn matching ${term}`)),
+       catchError(this.handleError<any>('searchUsers', [])) 
+    );
+  }
+
+
   forgotPass(emailData : any): Observable<any> {
 
     return this.http.post<any>(`${BASE_URL}forgotPass`, emailData, this.httpOptions)

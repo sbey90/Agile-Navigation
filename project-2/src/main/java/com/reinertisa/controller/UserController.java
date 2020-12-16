@@ -8,6 +8,7 @@ public interface UserController {
 	public String signup(HttpServletRequest req);
 	public String getUser(HttpServletRequest req);
 	public String getAllUsers();
+	public String getAllUsers(HttpServletRequest req);
 	
 	public String updateUser(HttpServletRequest req);
 	

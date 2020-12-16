@@ -1,9 +1,10 @@
+import { ShowTasksComponent } from './components/manager/show-tasks/show-tasks.component';
+import { EmpUpdateTaskComponent } from './components/employee/emp-update-task/emp-update-task.component';
+import { DashboardComponent } from './components/manager/dashboard/dashboard.component';
 import { EmpShowTasksComponent } from './components/employee/emp-show-tasks/emp-show-tasks.component';
 import { EmpHomeComponent } from './components/employee/emp-home/emp-home.component';
 
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
-import { ShowTasksComponent } from './components/manager/show-tasks/show-tasks.component';
-import { AssignTaskComponent } from './components/manager/assign-task/assign-task.component';
 import { CreateTaskComponent } from './components/manager/create-task/create-task.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/manager/home/home.component';
@@ -25,16 +26,16 @@ const routes: Routes = [
 
   {path: 'api/mngHome', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'api/createTask', component: CreateTaskComponent, canActivate: [AuthGuard]},
-  {path: 'api/assignTask', component: AssignTaskComponent, canActivate: [AuthGuard]},
-  {path: 'api/showTasks', component: ShowTasksComponent, canActivate: [AuthGuard]},
+  {path: 'api/showTasks', component: ShowTasksComponent, canActivate: [AuthGuard]}, 
+  {path: 'api/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'api/users', component: ShowUsersComponent, canActivate: [AuthGuard]},
   {path: 'api/getUser', component: ShowProfileComponent, canActivate: [AuthGuard]},
 
   {path: 'api/empHome', component: EmpHomeComponent, canActivate: [AuthGuard]},
-  {path: 'api/showTasks', component: EmpShowTasksComponent, canActivate: [AuthGuard]},
+  {path: 'api/empShowTasks', component: EmpShowTasksComponent, canActivate: [AuthGuard]},
   {path: 'api/getUser', component: EmpShowProfileComponent, canActivate: [AuthGuard]},
-  {path: 'api/dashboard', component: EmpDashboardComponent, canActivate: [AuthGuard]},
-
+  {path: 'api/empDashboard', component: EmpDashboardComponent, canActivate: [AuthGuard]},
+  {path: 'api/updateTask/:id', component: EmpUpdateTaskComponent, canActivate: [AuthGuard]}
 
 ];
 

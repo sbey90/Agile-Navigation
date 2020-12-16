@@ -51,6 +51,13 @@ public class User {
 		this.userId = userId;
 	}
 
+	
+
+	public User(String username) {
+		this.username = username;
+	}
+
+
 
 	public User(String username, String password, String firstName, String lastName, String email) {
 		super();

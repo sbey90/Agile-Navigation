@@ -52,6 +52,7 @@
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.5" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: com.eatthepath:java-otp:0.2.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

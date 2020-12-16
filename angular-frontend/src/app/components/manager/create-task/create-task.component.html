@@ -1,1 +1,118 @@
-<p>create-task works!</p>
+<section class="Form my-4 mx-5">
+
+    <div class="container">
+
+        <div class="row no-gutters">
+
+            <div class="col-lg-5">
+                <img [src]=myImage class="img-fluid"alt="">
+            </div>
+
+            <div class="col-lg-7 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">Create a Task</h1>
+                
+                <form (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" placeholder = "Enter task name" class="form-control my-2 p-4" 
+                            [(ngModel)]="task.taskName" id="taskName" name="taskName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <select [(ngModel)]="task.taskCategory" name="taskCategory"
+                            id="taskCategory" class="form-control my-2 p-4" required>
+                                <option value="" disabled selected>Select task category</option>
+                                <option value="1">Planning</option>
+                                <option value="2">Analysis</option>
+                                <option value="3">Design</option>
+                                <option value="4">Development</option>
+                                <option value="5">Testing</option>
+                                <option value="6">Implementation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <select [(ngModel)]="task.taskPriority" name="taskPriority"
+                            id="taskPriority" class="form-control my-2 p-4" required>
+                                <option value="" disabled selected>Select task priority</option>
+                                <option value="1">Do Now</option>
+                                <option value="2">Do Next</option>
+                                <option value="3">Do Last</option>
+                                <option value="4">Do Never</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+
+                            <mat-form-field class="form-control my-2 p-4"> 
+                                <input type="text" placeholder="Enter employee name"
+                                 matInput [formControl]="myControl" [matAutocomplete]="auto" required>
+                                <mat-autocomplete #auto="matAutocomplete">
+                                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.firstName + ' ' + option.lastName">
+                                          {{option.firstName + ' ' + option.lastName}}
+                                        </mat-option>
+                                      </mat-autocomplete>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" placeholder = "Enter due date" class="form-control my-2 p-4" 
+                            [(ngModel)]="task.taskDueDate" id="taskDueDate" name="taskDueDate" required>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <textarea class="form-control my-2 p-4" [(ngModel)]="task.description" id="description"
+                            placeholder = "Enter task description" name="description" rows="5" required></textarea>
+                        </div>
+                    </div>
+
+    
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn1 mt-3 mb-3" value="signin">Submit</button>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="col-lg-7 mt-1 mb-2">
+                            <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">
+                                <h4>Please fill all fields</h4>
+                            </div>        
+
+                            
+                            <div class="alert alert-danger" role="alert" *ngIf="taskNotCreated">
+                                <h4>Task not created, try again please!</h4>
+                            </div>  
+
+                            <div class="alert alert-success" role="alert" *ngIf="taskCreated">
+                                <h4>Task created successfully</h4>
+                            </div>  
+                            
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+

@@ -22,9 +22,7 @@ public interface TaskService {
 
     public String updateTask(HttpServletRequest req);
 
-    public String assignTask(HttpServletRequest req);
-
-    public String getAllTasks();
+    public String getAllTasks(HttpServletRequest req);
 
     public String getTask(HttpServletRequest req);
 

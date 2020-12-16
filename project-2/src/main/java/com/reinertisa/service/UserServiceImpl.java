@@ -299,11 +299,7 @@ public class UserServiceImpl implements UserService {
 		gson = new GsonBuilder().create();
 		JsonObject params = new JsonObject();
 		String json = "";
-		
-		System.out.println("Helloooo");
-		System.out.println("Helloooo");
-		System.out.println("Helloooo");
-		System.out.println("Helloooo");
+
 		
 		try {
 			
@@ -357,6 +353,68 @@ public class UserServiceImpl implements UserService {
 		
 		return json;
 		
+	}
+
+	@Override
+	public String getAllUsers(HttpServletRequest req) {
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params1 = new JsonObject();
+		String json = "";
+
+		try {
+
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			
+			String username = rootobj.get("username").getAsString();
+			List<User> users = userRepository.findAllByUsername(username);
+
+			if (users == null || users.size() == 0) {
+				params1.addProperty("status", "no record");
+				json = gson.toJson(params1);
+			} else {
+
+				JsonArray jobj = new JsonArray();
+				for (User user : users) {
+					JsonObject params = new JsonObject();
+
+					params.addProperty("userId", user.getUserId());
+					params.addProperty("username", user.getUsername());
+					params.addProperty("password", user.getPassword());
+					params.addProperty("firstName", user.getFirstName());
+					params.addProperty("lastName", user.getLastName());
+					params.addProperty("email", user.getEmail());
+					params.addProperty("role", user.getRole().getRole());
+
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+					String hireDateFormatted = user.getHireDate().format(formatter);
+					params.addProperty("hireDate", hireDateFormatted);
+
+					jobj.add(params);
+				}
+
+				json = jobj.toString();
+			}
+
+		} catch (Exception e) {
+			params1.addProperty("status", "process failed");
+			json = gson.toJson(params1);
+		}
+
+		return json;
+
+	}
+
+	@Override
+	public User getUser(String firstName, String lastName) {
+		return userRepository.findByFirstNameAndLastName(firstName, lastName);
+	}
+
+	@Override
+	public User getUser(int userId) {
+		return userRepository.findUserByUserId(userId);
 	}
 
 }

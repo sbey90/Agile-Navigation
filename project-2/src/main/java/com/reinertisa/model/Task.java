@@ -93,6 +93,32 @@ public class Task {
 		this.taskSubmittedDate = taskSubmittedDate;
 		this.taskDueDate = taskDueDate;
 	}
+	
+	
+
+	public Task(String taskName, TaskCategory taskCategory, TaskStatus taskStatus, String description,
+			TaskPriority taskPriority, User employee, User manager, LocalDateTime taskSubmittedDate,
+			LocalDateTime taskDueDate) {
+		
+		this.taskName = taskName;
+		this.taskCategory = taskCategory;
+		this.taskStatus = taskStatus;
+		this.description = description;
+		this.taskPriority = taskPriority;
+		this.employee = employee;
+		this.manager = manager;
+		this.taskSubmittedDate = taskSubmittedDate;
+		this.taskDueDate = taskDueDate;
+	}
+	
+	
+
+	public Task(int taskId, TaskStatus taskStatus, LocalDateTime taskCompletedDate ) {
+		super();
+		this.taskId = taskId;
+		this.taskStatus = taskStatus;
+		this.taskCompletedDate = taskCompletedDate;
+	}
 
 	public int getTaskId() {
 		return taskId;
