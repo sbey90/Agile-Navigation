@@ -15,10 +15,10 @@ public class SendEmail {
 	private final static String fromEmail = "isa_delibas@yahoo.com";
 	
 	public static boolean sendEmail(User user) {
-		String oneTimePass = OTP.getOTP();
+		
+		System.out.println("hello world 1");
 
-		if (updatePass(user, oneTimePass)) {
-
+			System.out.println("hello world 2");
 
 			Properties properties = new Properties();
 
@@ -34,6 +34,7 @@ public class SendEmail {
 			});
 
 			MimeMessage msg = new MimeMessage(session);
+			System.out.println("hello world 3");
 			try {
 				msg.setFrom(new InternetAddress(fromEmail));
 
@@ -47,6 +48,8 @@ public class SendEmail {
 						+ "Your username: " + user.getUsername() + "\n"
 						+ "Your one time password: " + user.getPassword() + "\n\n"
 						+ "Have a good one\nBest.\n\n Task Manager Team";
+				
+				System.out.println("hello world 4");
 
 
 				msg.setText(body);
@@ -57,7 +60,6 @@ public class SendEmail {
 				System.out.println("Email not send");
 			}
 
-		}
 		return false;
 	}
 
