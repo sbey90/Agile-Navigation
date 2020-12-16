@@ -1,0 +1,98 @@
+.divWeather {
+    width: auto;
+    float: left;
+    display: block;
+    margin: 2ch;
+    justify-content: center;
+    text-align:center;
+    align-items: center;
+    max-width: 800px;
+    background-color: rgba(255, 206, 86, 0.2);
+    background: linear-gradient(180deg, rgba(255, 206, 86, 0.2) 0%, rgba(224, 182, 75, 0.404) 75%, rgba(190, 154, 63, 0.596) 100%);
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px grey;
+}
+
+.cloudDiv {
+   display: inline-block;
+}
+
+.cloudTop {
+    margin-bottom: -80px;
+    float: left;
+    animation-name: cloudMovement; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 10s;
+    animation-timing-function: 10s;
+   
+}
+
+.cloudLeft {
+    width: 10%;
+    margin-bottom: -20%;
+    animation-name: cloudMovement;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+    animation-duration: 10s;
+    animation-timing-function: 10s;
+    z-index: 5;
+}
+
+.cloudRight {
+    width: 10%;
+    margin-bottom: -30%;
+    animation-name: cloudMovement; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 10s;
+    animation-timing-function: 10s;
+    z-index: 1;
+}
+
+.cloudMiddleLeft {
+    width: 10%;
+    margin-bottom: -40%;
+    animation-name: cloudMovement; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 15s;
+    animation-timing-function: 15s;
+    z-index: 2;
+    
+}
+
+.cloudMiddle {
+    width: 10%;
+    margin-bottom: -80px;
+    animation-name: cloudMovement; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 15s;
+    animation-timing-function: 15s;
+    z-index: 3;
+    
+}
+
+.cloudMiddleRight {
+    width: 10%;
+    margin-bottom: -80px;
+    animation-name: cloudMovement;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+    animation-duration: 20s;
+    animation-timing-function: 15s;
+    z-index: 4;
+}
+
+@keyframes cloudMovement{
+    from{margin-left: -10%;}
+    to{margin-left: 10%;}
+}
+
+img {
+    width: 100px;
+    height: 70px;
+    opacity: .1;
+   
+}

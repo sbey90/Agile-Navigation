@@ -356,8 +356,15 @@ public class TaskServiceImpl implements TaskService {
 
 		String taskDueDate = rootobj.get("taskDueDate").getAsString();
 
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-		LocalDateTime formattedTaskDueDate = LocalDateTime.parse(taskDueDate, formatter);
+		LocalDateTime formattedTaskDueDate;
+		try {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+			formattedTaskDueDate = LocalDateTime.parse(taskDueDate, formatter);
+		} catch (Exception e) {
+			System.out.println(taskDueDate);
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm':00.000Z'");
+			formattedTaskDueDate = LocalDateTime.parse(taskDueDate, formatter);
+		}
 
 		return new Task(taskName, new TaskCategory(categoryId), new TaskStatus(1, "Pending"), description,
 				new TaskPriority(priorityId), user, new User(managerId), taskSubmittedDate, formattedTaskDueDate);

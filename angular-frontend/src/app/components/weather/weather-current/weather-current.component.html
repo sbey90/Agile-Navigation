@@ -1,0 +1,24 @@
+<div class="container date">
+    {{date.substring(0,16)}}
+</div>
+<div id="divWeatherMain">
+    
+    <div class="weatherWidgetCol">
+        <div class="weatherWidgetRow" style="font-size: 25px;">{{WeatherData.name}}</div>
+    </div>
+
+    <div class="weatherWidgetCol">
+        <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{WeatherData.temp_faren}}°</div>
+        <div class="weatherWidgetRow" style="font-size: 12px;">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+    </div>
+
+    <div class="weatherWidgetCol">
+        <div class="weatherWidgetRow"><img src={{WeatherData.url}} style="margin-bottom: -10%;" alt=""></div>
+        <div class="weatherWidgetRow" style="font-size: 16px; margin-top: -6%; margin-bottom: 3%;">{{WeatherData.description}}</div>
+    </div>
+
+    <div class="weatherWidgetCol">
+        <div class="weatherWidgetRow" style="font-size: 16px;">Feels Like: {{WeatherData.temp_feels_like}}°</div>
+        <div class="weatherWidgetRow" style="font-size: 16px;">Humidity: {{WeatherData.main.humidity}}%</div>
+    </div>  
+</div>

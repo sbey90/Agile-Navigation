@@ -1,0 +1,28 @@
+#divWeatherMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: black solid;
+}
+
+.date {
+    color: black;
+    font-size: 3ch;
+}
+
+.weatherWidgetCol {
+    width: 25%;
+    height: 75%;
+    vertical-align: middle;
+}
+
+.weatherWidgetRow{
+    display: block;
+    margin:0 auto;
+    width: fit-content;
+    
+}

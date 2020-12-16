@@ -1,3 +1,6 @@
+import { WeatherForecastComponent } from './components/weather/weather-forecast/weather-forecast.component';
+import { WeatherCurrentComponent } from './components/weather/weather-current/weather-current.component';
+import { WeatherContainerComponent } from './components/weather/weather-container/weather-container.component';
 import { UpdateProfileComponent } from './components/manager/update-profile/update-profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -26,6 +29,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -47,7 +52,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent,
     UpdateProfileComponent,
     EmpUpdateTaskComponent,
-    ShowTasksComponent
+    ShowTasksComponent,
+    WeatherContainerComponent,
+    WeatherCurrentComponent,
+    WeatherForecastComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +69,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCheckboxModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
 
 

@@ -1,0 +1,8 @@
+<div class="forecastDiv row align-items-start">
+    <div class="forecastCol col" *ngFor="let forecast of Forecast">
+        <div class="forecastRow" >{{forecast.date.substring(0,11)}}</div>
+        <div class="forecastRow"><img src={{forecast.url}} alt=""></div>
+        <div class="forecastRow" style="font-size: 12px;">{{forecast.weather[0].description}}</div>
+        <div class="forecastRow" style="font-size: 12px;">{{forecast.temp.min}}° / {{forecast.temp.max}}°</div>
+    </div>
+</div>

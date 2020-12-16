@@ -1,0 +1,18 @@
+.forecastDiv {
+    display: inline-flex;
+    margin: auto;
+    padding-top: 3ch;
+    
+}
+
+.forecastCol {
+    border-left: black solid;
+    border-right: black solid;
+    color: black;
+    margin-bottom: 1ch;
+}
+
+.forecastRow {
+    justify-content: center;
+    align-items: center;
+}

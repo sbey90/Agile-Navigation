@@ -37,3 +37,8 @@ img{
     color: black;
 }
 
+#taskDueDate{
+    width:fit-content;
+    padding: 2em;
+}
+
