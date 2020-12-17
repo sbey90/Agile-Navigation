@@ -41,9 +41,13 @@ ul {
 }
 
 .navbar-brand{
-    font-family: 'Pacifico', cursive;
+    font-family: Verdana;
     font-size: 2.5rem;
-    color: #e73c3c; 
+    color: white; 
+}
+
+.navbar-brand:hover {
+    color: #e74c3c;
 }
 
 .navbar-toggler {
