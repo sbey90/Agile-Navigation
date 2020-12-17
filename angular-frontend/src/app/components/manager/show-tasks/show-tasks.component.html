@@ -48,7 +48,7 @@
                             <td>{{task.taskSubmittedDate}}</td>
                             <td>{{task.taskDueDate}}</td>
 
-                            <td *ngIf="task.taskCompletedDate == 'null'">Not Completed Yet</td>
+                            <td *ngIf="task.taskCompletedDate == 'null'"><strong>Not Completed Yet</strong></td>
                             <td *ngIf="task.taskCompletedDate != 'null'">{{task.taskCompletedDate}}</td>
                         </tr>
                     </tbody>
