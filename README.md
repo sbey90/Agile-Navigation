@@ -2,7 +2,7 @@
 <br>
 
 ## Executive Summary
-This application will allow software developers to create, delegate, monitor, and remove tasks that have been assigned through the Scrum Framework
+This application will allow software developers to create, delegate, monitor, and remove tasks that have been assigned through the Scrum Framework.
 
 <br>
 
