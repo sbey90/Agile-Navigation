@@ -54,6 +54,7 @@ public class UserServiceImpl implements UserService {
 			String email = rootobj.get("email").getAsString();
 			LocalDateTime hireDate = LocalDateTime.now();
 			String role = rootobj.get("role").getAsString();
+			double salary = 5000D;
 
 			if (!userRepository.isAvailableUsername(username)) {
 				params.addProperty("status", "username not available");
@@ -67,7 +68,7 @@ public class UserServiceImpl implements UserService {
 				return json;
 			}
 
-			User newUser = new User(username, password, firstName, lastName, email, hireDate, new UserRole(1, role));
+			User newUser = new User(username, password, firstName, lastName, email, salary, hireDate, new UserRole(1, role));
 
 			userRepository.save(newUser);
 			User user = getUserByUsername(username);
@@ -78,6 +79,7 @@ public class UserServiceImpl implements UserService {
 			params.addProperty("firstName", user.getFirstName());
 			params.addProperty("lastName", user.getLastName());
 			params.addProperty("email", user.getEmail());
+			params.addProperty("salary", user.getSalary());
 			params.addProperty("role", user.getRole().getRole());
 
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
@@ -123,6 +125,7 @@ public class UserServiceImpl implements UserService {
 					params.addProperty("lastName", user.getLastName());
 					params.addProperty("email", user.getEmail());
 					params.addProperty("role", user.getRole().getRole());
+					params.addProperty("salary", user.getSalary());
 
 					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 					String hireDateFormatted = user.getHireDate().format(formatter);
@@ -275,6 +278,7 @@ public class UserServiceImpl implements UserService {
 				params.addProperty("lastName", user.getLastName());
 				params.addProperty("email", user.getEmail());
 				params.addProperty("role", user.getRole().getRole());
+				params.addProperty("salary", user.getSalary());
 
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 				String hireDateFormatted = user.getHireDate().format(formatter);
@@ -354,6 +358,52 @@ public class UserServiceImpl implements UserService {
 		return json;
 		
 	}
+	
+	
+	
+	@Override
+	public String updateCareer(HttpServletRequest req) {
+		
+		Gson gson = new Gson();
+		gson = new GsonBuilder().create();
+		JsonObject params = new JsonObject();
+		String json = "";
+
+		
+		try {
+			
+			JsonParser jsonParser = new JsonParser();
+			JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) req.getInputStream()));
+			JsonObject rootobj = root.getAsJsonObject();
+			
+			int userId = rootobj.get("userId").getAsInt();
+			int roleId = rootobj.get("role").getAsInt();
+			
+			User user = userRepository.findUserByUserId(userId);
+			
+			
+
+			
+			if(userRepository.updateCareer(userId, user.getSalary() * 1.20 , roleId)) {
+				params.addProperty("status", "Career updated successfully");
+				json = gson.toJson(params);
+			} else {
+				params.addProperty("status", "Career not updated");
+				json = gson.toJson(params);
+			}		
+			
+			
+			
+		} catch (Exception e) {
+			params.addProperty("status", "Career not updated");
+			json = gson.toJson(params);
+		}
+		
+		return json;
+	}
+	
+	
+	
 
 	@Override
 	public String getAllUsers(HttpServletRequest req) {
@@ -387,6 +437,7 @@ public class UserServiceImpl implements UserService {
 					params.addProperty("lastName", user.getLastName());
 					params.addProperty("email", user.getEmail());
 					params.addProperty("role", user.getRole().getRole());
+					params.addProperty("salary", user.getSalary());
 
 					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 					String hireDateFormatted = user.getHireDate().format(formatter);
@@ -416,5 +467,7 @@ public class UserServiceImpl implements UserService {
 	public User getUser(int userId) {
 		return userRepository.findUserByUserId(userId);
 	}
+
+
 
 }

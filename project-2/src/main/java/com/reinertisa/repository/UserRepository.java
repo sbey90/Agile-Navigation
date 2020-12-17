@@ -18,6 +18,7 @@ public interface UserRepository {
 	User findUserByUserId(int userId);
 	
 	boolean updateUser(User user);
+	boolean updateCareer(int userId, double salary, int roleId);
 	
 	public boolean isAvailableEmail(String email);
 	public boolean isAvailableUsername(String username); 

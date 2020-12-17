@@ -31,11 +31,6 @@ public class UserControlerImpl implements UserController {
 		return userService.signin(req);
 	}
 
-	@GetMapping("api/signout")
-	public String signout(HttpServletRequest req) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@PostMapping("api/forgotPass")
 	public @ResponseBody String forgotPassword(HttpServletRequest req) {
@@ -45,8 +40,7 @@ public class UserControlerImpl implements UserController {
 	@PostMapping("api/getUser")
 	public @ResponseBody String getUser(HttpServletRequest req) {
 		
-		return userService.getUser(req);
-		
+		return userService.getUser(req);		
 	}
 	
 	@PutMapping("api/updateUser")
@@ -57,14 +51,19 @@ public class UserControlerImpl implements UserController {
 
 	@GetMapping("api/getAllUsers")
 	public @ResponseBody String getAllUsers() {
-		System.out.println("We are here");
+
 		return userService.getAllUsers();
 	}
 
 	@PostMapping("api/searchUser")
 	public @ResponseBody String getAllUsers(HttpServletRequest req) {
-		System.out.println("XXXXXXXXXXXXXXXXXXXXXXX");
 		return userService.getAllUsers(req);
+	}
+	
+	@PutMapping("api/updateCareer")
+	public @ResponseBody String updateCareer(HttpServletRequest req) {
+		
+		return userService.updateCareer(req);		
 	}
 
 }

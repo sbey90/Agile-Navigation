@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  user : User = new User(0,"", "", "", "", "", "", "", "");
+  user : User = new User(0,"", "", "", "", "", "", "", "",0);
   myImage: string = "assets/img/index1.jpg";
 
   isFormInvalid = false;

@@ -11,9 +11,9 @@ public interface UserController {
 	public String getAllUsers(HttpServletRequest req);
 	
 	public String updateUser(HttpServletRequest req);
+	public String updateCareer(HttpServletRequest req);
 	
 	public String signin(HttpServletRequest req);
-	public String signout(HttpServletRequest req);
 	public String forgotPassword(HttpServletRequest req);
 	
 	

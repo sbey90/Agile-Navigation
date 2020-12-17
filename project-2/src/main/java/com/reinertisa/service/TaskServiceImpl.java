@@ -80,6 +80,8 @@ public class TaskServiceImpl implements TaskService {
 
 			Task newTask = getTaskInstance(rootobj);
 
+			System.out.println(newTask);
+			
 			int taskId = taskRepository.save(newTask);
 
 			if (taskId > 0) {

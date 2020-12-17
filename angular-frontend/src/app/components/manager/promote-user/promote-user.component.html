@@ -1,0 +1,122 @@
+<section class="Form my-4 mx-5" *ngIf="user">
+
+    <div class="container">
+
+        <div class="row no-gutters">
+
+            <div class="col-lg-5">
+                <img [src]=myImage class="img-fluid"alt="">
+            </div>
+
+            <div class="col-lg-7 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">Career Performance</h1>
+                
+                <form (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                   
+                    
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text my-2 p-4" id=""><strong>UserId</strong>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <input type="text" class="form-control my-2 p-4" [(ngModel)]="user.userId" id="userId" name="userId"
+                        readonly required>
+                </div>
+
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text my-2 p-4" id=""><strong>First Name&nbsp;&nbsp;&nbsp;</strong></span>
+                    </div>
+                    <input type="text" class="form-control my-2 p-4" [(ngModel)]="user.firstName" id="firstName"
+                        name="firstName" readonly required>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text my-2 p-4" id=""><strong>Last Name&nbsp;&nbsp;&nbsp;</strong></span>
+                    </div>
+                    <input type="text" class="form-control my-2 p-4" [(ngModel)]="user.lastName" id="lastName"
+                        name="lastName" readonly required>
+                </div>
+
+
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text my-2 p-4" id=""><strong>Current Role</strong></span>
+                    </div>
+                    <input type="text" class="form-control my-2 p-4" [(ngModel)]="currentRole" id="currentRole" name="currentRole"
+                        readonly required>
+
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text my-2 p-4" id=""><strong>Salary($)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></span>
+                    </div>
+                    <input type="text" class="form-control my-2 p-4" [(ngModel)]="user.salary" id="salary" name="salary"
+                        readonly required>
+
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text my-2 p-4" id=""><strong>Promote&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                            &nbsp;&nbsp;</span>
+                    </div>
+                    <select [(ngModel)]="user.role" name="role"
+                    id="role" class="form-control my-2 p-4" required>
+                        <option value="" disabled selected>Update Employee Role</option>
+                        <option value="1">Analyst</option>
+                        <option value="2">Software Developer</option>
+                        <option value="3">Software Architecture</option>
+                        <option value="4">Software Manager</option>
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text my-2 p-4" id=""><strong>Hire Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></span>
+                    </div>
+                    <input type="text" class="form-control my-2 p-4" [(ngModel)]="user.hireDate" id="hireDate"
+                        name="hireDate" readonly required>
+                </div>
+    
+                    <div class="form-row">
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn1 mt-3 mb-5" value="promote">PROMOTE</button>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-lg-12">
+                            <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">
+                                <h4>Please fill all fields</h4>
+                            </div>        
+
+                            
+                            <div class="alert alert-danger mt-1 mb-2 text-center" role="alert" *ngIf="promotionFailed">
+                                <h4>User not promoted, try again please</h4>
+                            </div>  
+
+                            <div class="alert alert-success mt-1 mb-2 text-center" role="alert" *ngIf="promotionSuccess">
+                               
+                                <h4>{{user.firstName + " " + user.lastName}} promoted successfully</h4>
+                                <h4>{{user.firstName + " " + user.lastName}}' salary has been increased %20 percent.</h4>
+
+                            </div>  
+                            
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>

@@ -55,7 +55,14 @@ export class UserService {
   updateUser(user: User): Observable<any> {
     return this.http.put(`${BASE_URL}updateUser`, user, this.httpOptions)
       .pipe(
-        catchError(this.handleError<any>('updateCat'))
+        catchError(this.handleError<any>('updateUser'))
+      );
+  }
+
+  updateCareer(user: User): Observable<any> {
+    return this.http.put(`${BASE_URL}updateCareer`, user, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<any>('updateCareer'))
       );
   }
 

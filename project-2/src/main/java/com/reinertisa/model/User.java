@@ -33,6 +33,8 @@ public class User {
 	private String lastName;
 
 	private String email;
+	
+	private double salary;
 
 	@Column(name = "hire_date")
 	private LocalDateTime hireDate;
@@ -93,6 +95,21 @@ public class User {
 
 	
 
+	public User(String username, String password, String firstName, String lastName, String email, double salary,
+			LocalDateTime hireDate, UserRole role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.salary = salary;
+		this.hireDate = hireDate;
+		this.role = role;
+	}
+
+
+
 	public User(int userId, String username, String password, String firstName, String lastName, String email,
 			LocalDateTime hireDate, UserRole role) {
 		super();
@@ -105,6 +122,8 @@ public class User {
 		this.hireDate = hireDate;
 		this.role = role;
 	}
+	
+	
 
 	
 
@@ -155,6 +174,20 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+
+	public double getSalary() {
+		return salary;
+	}
+
+
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+
 
 	public LocalDateTime getHireDate() {
 		return hireDate;
@@ -172,12 +205,16 @@ public class User {
 		this.role = role;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", firstName="
-				+ firstName + ", lastName=" + lastName + ", email=" + email + ", hireDate=" + hireDate + ", role="
-				+ role + "]";
+				+ firstName + ", lastName=" + lastName + ", email=" + email + ", salary=" + salary + ", hireDate="
+				+ hireDate + ", role=" + role + "]";
 	}
+
+
 
 	
 }

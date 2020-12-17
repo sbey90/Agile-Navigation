@@ -11,7 +11,7 @@ import {Location} from '@angular/common';
 })
 export class UpdateProfileComponent implements OnInit {
 
-  @Input() user: User = new User(0, "", "", "", "", "", "", "", "");
+  @Input() user: User = new User(0, "", "", "", "", "", "", "", "",0);
 
   isFormInvalid = false;
   passwordNotMatch = false;
