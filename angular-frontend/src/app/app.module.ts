@@ -17,7 +17,6 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { EmpHomeComponent } from './components/employee/emp-home/emp-home.component';
-import { EmpShowProfileComponent } from './components/employee/emp-show-profile/emp-show-profile.component';
 import { EmpShowTasksComponent } from './components/employee/emp-show-tasks/emp-show-tasks.component';
 import { EmpDashboardComponent } from './components/employee/emp-dashboard/emp-dashboard.component';
 import { DashboardComponent } from './components/manager/dashboard/dashboard.component';
@@ -33,6 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PromoteUserComponent } from './components/manager/promote-user/promote-user.component';
 
 
 @NgModule({
@@ -46,7 +46,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ShowProfileComponent,
     ForgotpasswordComponent,
     EmpHomeComponent,
-    EmpShowProfileComponent,
     EmpShowTasksComponent,
     EmpDashboardComponent,
     DashboardComponent,
@@ -55,7 +54,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ShowTasksComponent,
     WeatherContainerComponent,
     WeatherCurrentComponent,
-    WeatherForecastComponent
+    WeatherForecastComponent,
+    PromoteUserComponent
   ],
   imports: [
     BrowserModule,

@@ -10,8 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowProfileComponent implements OnInit {
 
-  user: User = new User(0, "", "", "", "", "", "", "", "");
-  selectedUser : User = new User(0, "", "", "", "", "", "", "", "");
+  user: User = new User(0, "", "", "", "", "", "", "", "",0);
+  selectedUser : User = new User(0, "", "", "", "", "", "", "", "",0);
 
   constructor(private userService: UserService, private authenticationService: AuthenticationService) { }
 

@@ -1,5 +1,6 @@
 package com.reinertisa.repository;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.NoResultException;
@@ -198,6 +199,35 @@ public class UserRepositoryHibernate implements UserRepository{
 		
 		return false;
 	}
+	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean updateCareer(int userId, double salary, int roleId) {
+				
+		try {
+		
+			
+			String sql = "UPDATE users SET salary= :salary, role_role_id= :roleId WHERE user_id= :userId";					
+			
+			Query<User> query = sessionFactory.getCurrentSession().createNativeQuery(sql);
+			query.setParameter("userId", userId);
+			query.setParameter("salary", salary);
+			query.setParameter("roleId", roleId);
+					
+			int count = query.executeUpdate();
+			
+			if(count > 0)
+				return true;
+			
+		} catch (Exception e) {
+			logger.debug(e);
+		}	
+		
+		return false;
+		
+		
+	}	
 
 	@Override
 	public List<User> findAllByUsername(String username) {
@@ -238,7 +268,9 @@ public class UserRepositoryHibernate implements UserRepository{
 		}	
 		
 		return null;
-	}	
+	}
+
+
 	
 	
 }

@@ -18,6 +18,7 @@ public interface UserService {
 	
 	public String getUser(HttpServletRequest req);
 	public String updateUser(HttpServletRequest req);
+	public String updateCareer(HttpServletRequest req);
 	
 	
 	public String signin(HttpServletRequest req);

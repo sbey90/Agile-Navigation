@@ -14,7 +14,8 @@
                             <th>Last Name</th>
                             <th>Email</th>
                             <th>Hired Date</th>
-                            <th>Role</th>
+                            <th>Salary</th>
+                            <th>Role</th>                           
                             <th>Career Path</th>
                         </tr>
                     </thead>
@@ -26,7 +27,8 @@
                             <td>{{user.lastName}}</td>
                             <td>{{user.email}}</td>
                             <td>{{user.hireDate}}</td>
-                            <!-- <td>{{user.role}}</td> -->
+                            <td>{{user.salary}}</td>
+                            
 
                             <td *ngIf="user.role === 'Software Manager'"><button type="button"
                                     class="btn btn-success btn-sm">{{user.role}}</button></td>
@@ -37,13 +39,14 @@
                             <td *ngIf="user.role === 'Software Architecture'"><button type="button"
                                     class="btn btn-info btn-sm">{{user.role}}</button></td>
                             <td *ngIf="user.role !== 'Software Manager'">
-                                <a routerLink="/api/updateUser/{{user.userId}}">
-                                    <button class="btn btn-primary btn-sm" title="update task">Promote</button>
+                                <a routerLink="/api/promoteUser/{{user.userId}}">
+                                    <button class="btn btn-primary btn-sm" title="promote user">Promote</button>
                                 </a>
                             </td>
-                            <td *ngIf="user.role === 'Software Manager'">
 
+                            <td *ngIf="user.role === 'Software Manager'">
                             </td>
+                            
                         </tr>
                     </tbody>
                 </table>
