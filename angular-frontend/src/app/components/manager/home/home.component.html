@@ -1,1 +1,38 @@
+<div class="container uniform">
+<div class="container">
+    <div class="container-fluid inline">
+        <span class="spin">
+            <img src="../../../../assets/img/clipboard.png" alt="">
+        </span>  
+        <!--<div class="container-fluid welcome">
+            <h1>Greetings</h1>
+        </div>-->
+          
+    </div>
+</div>
+<br>
+
 <app-weather-container></app-weather-container>
+    <div class="card border-primary">
+                <div class="card-header text-center border-secondary">
+                <h1> Welcome to Task Manager</h1>
+                </div>
+                <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>Task manager was created as a project management tool to help developers with their workflow. <br><br>This is done by allowing Managers to create tasks for employees working on a project. <br><br> The employees can then login to view their tasks and update the manager of their progress. <br><br> Progress of assigned task can be seen in the dashboard. </p>
+                    
+                </blockquote>
+                </div>
+
+        <div class="card__side card__side--front">
+            <div class="card__theme">
+             <div class="card__theme-box">
+                 <div *ngIf="user">
+                    <p class="card__title">Hello {{user.username}}</p>
+                 </div>
+             </div>
+           </div>
+         
+        </div>
+    </div>
+</div>
