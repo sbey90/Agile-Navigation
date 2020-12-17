@@ -1,0 +1,19 @@
+.card{
+    margin-top: 15px;
+    margin-left: 2ch;
+    margin-right: 2ch;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px grey;
+    background-color: rgb(201, 198, 198);
+}
+h1{
+    font: 2em verdana;
+    font-weight: 900;
+}
+p{
+    font: 1em sans-serif;
+}
+.card-header{
+    background-color:  rgb(33, 107, 247);
+    border-radius: 30px;
+}

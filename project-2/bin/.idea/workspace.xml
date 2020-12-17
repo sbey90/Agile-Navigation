@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="project-2:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="47c749e6-3239-4fb3-aaef-1a46bdcc6ab1" name="Default Changelist" comment="Pom fixed.">
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-dashboard/emp-dashboard.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-dashboard/emp-dashboard.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-dashboard/emp-dashboard.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-dashboard/emp-dashboard.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-home/emp-home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-home/emp-home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-home/emp-home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-home/emp-home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-show-profile/emp-show-profile.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-show-profile/emp-show-profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-show-profile/emp-show-profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-show-profile/emp-show-profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-show-tasks/emp-show-tasks.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-show-tasks/emp-show-tasks.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-show-tasks/emp-show-tasks.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-show-tasks/emp-show-tasks.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-update-task/emp-update-task.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-update-task/emp-update-task.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-update-task/emp-update-task.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/employee/emp-update-task/emp-update-task.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/forgotpassword/forgotpassword.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/forgotpassword/forgotpassword.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/forgotpassword/forgotpassword.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/forgotpassword/forgotpassword.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/assign-task/assign-task.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/create-task/create-task.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/create-task/create-task.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/create-task/create-task.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/create-task/create-task.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/dashboard/dashboard.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/dashboard/dashboard.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/dashboard/dashboard.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/dashboard/dashboard.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/show-profile/show-profile.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/show-profile/show-profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/show-profile/show-profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/show-profile/show-profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/show-users/show-users.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/show-users/show-users.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/show-users/show-users.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/show-users/show-users.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/update-profile/update-profile.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/update-profile/update-profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/update-profile/update-profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/manager/update-profile/update-profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/signin/signin.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/signin/signin.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/signin/signin.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/signin/signin.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/signup/signup.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/signup/signup.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/signup/signup.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/components/signup/signup.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/guards/auth.guard.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/guards/auth.guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/models/signindata.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/models/task.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/models/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/services/authentication.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/services/authentication.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/services/task.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/services/task.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/services/user.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/app/services/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/UX-design2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/desk-design2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/developer-background2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/developer-background3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/index1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/index2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/index4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/index5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/index6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/index7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/minneapolisPurple.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/program-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/task.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/assets/img/users-img.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-frontend/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_2_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_2_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_eatthepath_java_otp_0_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_23_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_3_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/Cloud Foundry.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/Docker.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jsch.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.m2e.discovery.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.urischeme.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.springframework.ide.eclipse.imports.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.springsource.ide.eclipse.commons.frameworks.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.springsource.ide.eclipse.commons.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core.ui/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/_0.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/segments.gen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/segments_2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/write.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/6a5a918afb191f9a21ebeea82dff432b/_0.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/6a5a918afb191f9a21ebeea82dff432b/segments.gen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/6a5a918afb191f9a21ebeea82dff432b/segments_2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/6a5a918afb191f9a21ebeea82dff432b/write.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/_0.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments.gen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments_2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/write.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.16.0.20200318-1040.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.tips.ide/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.tm.terminal.view.ui/.executables/data.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/version.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/controller/TaskController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/controller/TaskControllerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/controller/UserControlerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/demo/MainDriver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/model/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/model/TaskCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/model/TaskPriority.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/model/TaskStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/model/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/repository/TaskRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/repository/TaskRepositoryHibernate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/repository/UserRepositoryHibernate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/service/TaskService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/service/TaskServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/util/OTP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reinertisa/util/SendEmail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/tests/TaskServiceTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/controller/TaskController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/controller/TaskControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/controller/UserControlerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/demo/MainDriver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/model/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/model/TaskCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/model/TaskPriority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/model/TaskStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/model/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/repository/TaskRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/repository/TaskRepositoryHibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/repository/UserRepositoryHibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/service/TaskService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/service/TaskServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/util/SendEmail$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reinertisa/util/SendEmail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/com.reinertisa/project-2/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/com.reinertisa/project-2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/controller/TaskController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/controller/TaskControllerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/controller/UserControlerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/demo/MainDriver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/model/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/model/TaskCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/model/TaskPriority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/model/TaskStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/model/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/repository/TaskRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/repository/TaskRepositoryHibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/repository/UserRepositoryHibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/service/TaskService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/service/TaskServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/util/SendEmail$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/com/reinertisa/util/SendEmail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/activation-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/byte-buddy-1.10.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/classmate-1.5.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/dom4j-2.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/gson-2.8.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-commons-annotations-5.1.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-core-5.4.23.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-core-2.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-databind-2.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/jandex-2.1.3.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/jboss-logging-3.4.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/mail-1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/postgresql-42.2.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/servlet-api-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aop-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-beans-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-context-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-core-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-expression-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jdbc-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-orm-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-tx-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-web-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/spring-webmvc-4.3.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/stax-ex-1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/lib/txw2-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-2-0.0.1-SNAPSHOT/static/index.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Backup" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1lRIPzADbqpiuYo4nrYQ81ttUp6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.39">
+    <configuration name="MainDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.reinertisa.demo.MainDriver" />
+      <module name="project-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.reinertisa.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OTP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.reinertisa.util.OTP" />
+      <module name="project-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.reinertisa.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatTime.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/project-2/src/main/webapp/static/DatTime.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 9.0.39" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.39" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/project_2_war/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="project-2:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/project_2_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="cb88166f-9e14-456c-a523-b937a4fbc8a6" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52982" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="project-2:war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainDriver" />
+      <item itemvalue="Application.OTP" />
+      <item itemvalue="JavaScript Debug.DatTime.html" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.39" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.DatTime.html" />
+        <item itemvalue="Application.OTP" />
+        <item itemvalue="Application.MainDriver" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="47c749e6-3239-4fb3-aaef-1a46bdcc6ab1" name="Default Changelist" comment="" />
+      <created>1607553457267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607553457267</updated>
+      <workItem from="1607553458501" duration="1893000" />
+      <workItem from="1607642164438" duration="2523000" />
+      <workItem from="1607702044746" duration="3006000" />
+      <workItem from="1607712591433" duration="139000" />
+      <workItem from="1607712744822" duration="580000" />
+      <workItem from="1607713609574" duration="860000" />
+      <workItem from="1607716464688" duration="67000" />
+      <workItem from="1607716545494" duration="532000" />
+      <workItem from="1607725742100" duration="6000" />
+      <workItem from="1607725765595" duration="6694000" />
+      <workItem from="1607965510331" duration="677000" />
+      <workItem from="1607977676862" duration="205000" />
+    </task>
+    <task id="LOCAL-00001" summary="Test">
+      <created>1607702184753</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607702184753</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&quot;Made&quot; an OTP Generator">
+      <created>1607703144651</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607703144651</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Need to work out how to update user's pass to the OTP in a safe manner.">
+      <created>1607703291531</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607703291531</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Need to work out how to update user's pass to the OTP in a safe manner.">
+      <created>1607713036440</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607713036440</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Need to work out how to update user's pass to the OTP in a safe manner.">
+      <created>1607713629941</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607713629941</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Need to work out how to update user's pass to the OTP in a safe manner.">
+      <created>1607727434829</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607727434830</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Pom fixed.">
+      <created>1607735997571</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607735997571</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Test" />
+    <MESSAGE value="&quot;Made&quot; an OTP Generator" />
+    <MESSAGE value="Need to work out how to update user's pass to the OTP in a safe manner." />
+    <MESSAGE value="Pom fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pom fixed." />
+  </component>
+</project>

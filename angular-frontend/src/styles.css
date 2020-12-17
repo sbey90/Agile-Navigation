@@ -6,4 +6,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; 
-    font-family: "Roboto", "Helvetica Neue", sans-serif; }
+    font-family: "Roboto", "Helvetica Neue", sans-serif; 
+    
+    background: repeating-linear-gradient(30deg, rgba(81, 139, 247, 0.15), rgba(81, 139, 247, 0.15) 200px, rgb(255, 255, 255) 200px, rgb(255, 255, 255) 400px);
+    /*background: repeating-linear-gradient( 30deg, rgba(81, 139, 247, 0.692), rgba(81, 139, 247, 0.692) 20px, rgb(255, 255, 255) 20px, rgb(255, 255, 255) 20px); */
+}

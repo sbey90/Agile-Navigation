@@ -8,7 +8,7 @@
     align-items: center;
     max-width: 800px;
     background-color: rgba(255, 206, 86, 0.2);
-    background: linear-gradient(180deg, rgba(255, 206, 86, 0.2) 0%, rgba(224, 182, 75, 0.404) 75%, rgba(190, 154, 63, 0.596) 100%);
+    background: linear-gradient(180deg, rgba(255, 206, 86) 0%, rgba(224, 182, 75) 75%, rgba(190, 154, 63) 100%);
     border-radius: 30px;
     box-shadow: 12px 12px 22px grey;
 }
