@@ -44,4 +44,3 @@ This application will allow software developers to create, delegate, monitor, an
 - JUnit4 
 - Log4J 
 - Bootstrap
->>>>>>> 178e69f7a4d3684669e6c52ad6b12507ccd2b04e
