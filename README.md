@@ -41,6 +41,12 @@ This application will allow software developers to create, delegate, monitor, an
 - Hibernate 
 - AWS RDS 
 - AWS EC2
+- Spring MVC
+- Spring Test
+- Mockito
 - JUnit4 
 - Log4J 
 - Bootstrap
+- Open Weather Map API
+- Javax Mail Service
+
